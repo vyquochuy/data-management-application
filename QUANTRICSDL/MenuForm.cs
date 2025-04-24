@@ -5,6 +5,8 @@
         public MenuForm()
         {
             InitializeComponent();
+
+            FormHelper.SetStandardSize(this);
             // TODO: kết nối đb
             //this.Load += new System.EventHandler(this.MenuForm_Load);
 
@@ -15,7 +17,7 @@
             try
             {
                 var conn = DatabaseHelper.GetConnection();
-                MessageBox.Show("✅ Kết nối thành công!", "Thông báo");
+                MessageBox.Show("Kết nối thành công!", "Thông báo");
                 conn.Close(); // Đừng quên đóng nha đại ca
             }
             catch (Exception ex)
@@ -31,7 +33,13 @@
 
         private void btnXemDanhSach_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mở Form: Xem danh sách User/Role");
+            this.Hide();
+
+            UserRoleList userRoleList = new UserRoleList();
+            userRoleList.ShowDialog();
+
+            this.Show();
+
         }
 
         private void btnCapQuyen_Click(object sender, EventArgs e)

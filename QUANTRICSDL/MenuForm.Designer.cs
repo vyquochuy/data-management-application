@@ -39,7 +39,7 @@
             // 
             // btnQuanLyUserRole
             // 
-            btnQuanLyUserRole.Location = new Point(50, 40);
+            btnQuanLyUserRole.Location = new Point(222, 41);
             btnQuanLyUserRole.Name = "btnQuanLyUserRole";
             btnQuanLyUserRole.Size = new Size(300, 50);
             btnQuanLyUserRole.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // btnXemDanhSach
             // 
-            btnXemDanhSach.Location = new Point(50, 111);
+            btnXemDanhSach.Location = new Point(222, 108);
             btnXemDanhSach.Name = "btnXemDanhSach";
             btnXemDanhSach.Size = new Size(300, 50);
             btnXemDanhSach.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnCapQuyen
             // 
-            btnCapQuyen.Location = new Point(50, 180);
+            btnCapQuyen.Location = new Point(222, 179);
             btnCapQuyen.Name = "btnCapQuyen";
             btnCapQuyen.Size = new Size(300, 50);
             btnCapQuyen.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnThuHoiQuyen
             // 
-            btnThuHoiQuyen.Location = new Point(50, 250);
+            btnThuHoiQuyen.Location = new Point(222, 249);
             btnThuHoiQuyen.Name = "btnThuHoiQuyen";
             btnThuHoiQuyen.Size = new Size(300, 50);
             btnThuHoiQuyen.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // btnXemThongTinQuyen
             // 
-            btnXemThongTinQuyen.Location = new Point(50, 320);
+            btnXemThongTinQuyen.Location = new Point(222, 322);
             btnXemThongTinQuyen.Name = "btnXemThongTinQuyen";
             btnXemThongTinQuyen.Size = new Size(300, 50);
             btnXemThongTinQuyen.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(420, 420);
+            ClientSize = new Size(792, 420);
             Controls.Add(btnQuanLyUserRole);
             Controls.Add(btnXemDanhSach);
             Controls.Add(btnCapQuyen);
