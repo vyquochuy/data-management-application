@@ -17,3 +17,24 @@ C:\Workspace\ATBM HTTT\DA\QUANTRICSDL\QUANTRICSDL\obj\Debug\net8.0-windows\QUANT
 C:\Workspace\ATBM HTTT\DA\QUANTRICSDL\QUANTRICSDL\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
 C:\Workspace\ATBM HTTT\DA\QUANTRICSDL\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.AssemblyReference.cache
 C:\Workspace\ATBM HTTT\DA\QUANTRICSDL\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRIC.07FD67E3.Up2Date
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.exe
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.deps.json
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.runtimeconfig.json
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.dll
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.pdb
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.AssemblyReference.cache
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.MenuForm.resources
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.GenerateResource.cache
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.GeneratedMSBuildEditorConfig.editorconfig
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.AssemblyInfoInputs.cache
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.AssemblyInfo.cs
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.CoreCompileInputs.cache
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.sourcelink.json
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRIC.07FD67E3.Up2Date
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.dll
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\refint\QUANTRICSDL.dll
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.pdb
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.genruntimeconfig.cache
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\ref\QUANTRICSDL.dll
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.LoginForm.resources

@@ -1,1 +1,23 @@
+# Visual Studio
 .vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.bak
+*.ncb
+*.aps
+*.log
+*.tlog
+*.pdb
+*.idb
+
+# NuGet
+packages/
+!packages/build/
+
+# Miscellaneous
+*.bak
+*.tmp
+Thumbs.db

@@ -1,4 +1,4 @@
-﻿Cài NuGet: racle.ManagedDataAccess
+﻿Cài NuGet: Oracle.ManagedDataAccess
 
 Thông tin kết nối với máy
 string connectionString = 

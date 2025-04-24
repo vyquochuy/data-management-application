@@ -94,6 +94,7 @@
             Controls.Add(btnXemThongTinQuyen);
             Name = "MenuForm";
             Text = "QUẢN TRỊ ORACLE";
+            Load += MenuForm_Load_1;
             ResumeLayout(false);
         }
 

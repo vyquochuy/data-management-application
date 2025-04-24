@@ -48,5 +48,10 @@
         {
             MessageBox.Show("Mở Form: Xem thông tin quyền");
         }
+
+        private void MenuForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
