@@ -5,7 +5,7 @@ namespace QUANTRICSDL
 {
     public static class DatabaseHelper
     {
-        // 👉 Connection string có thể thay đổi theo máy của đại ca
+        //Connection string có thể thay đổi theo máy của đại ca
         private static string connectionString =
             "User Id=C##ADMIN;Password=123;Data Source=localhost:1521/XEPDB1;";
 
@@ -20,7 +20,7 @@ namespace QUANTRICSDL
             }
             catch (Exception ex)
             {
-                throw new Exception("❌ Kết nối Oracle thất bại: " + ex.Message);
+                throw new Exception("Kết nối Oracle thất bại: " + ex.Message);
             }
         }
 

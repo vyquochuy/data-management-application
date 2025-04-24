@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "syF4Vg8qmuE=",
+  "dgSpecHash": "vDNF1tO86Og=",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\QUANTRICSDL.csproj",
+  "projectFilePath": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hvo64\\.nuget\\packages\\oracle.manageddataaccess\\23.4.0\\oracle.manageddataaccess.23.4.0.nupkg.sha512",
     "C:\\Users\\hvo64\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

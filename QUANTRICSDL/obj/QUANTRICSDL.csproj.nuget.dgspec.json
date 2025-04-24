@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\QUANTRICSDL.csproj": {}
+    "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\QUANTRICSDL.csproj": {
+    "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\QUANTRICSDL.csproj",
+        "projectUniqueName": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
         "projectName": "QUANTRICSDL",
-        "projectPath": "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\QUANTRICSDL.csproj",
+        "projectPath": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
         "packagesPath": "C:\\Users\\hvo64\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ATBM HTTT\\DA\\QUANTRICSDL\\QUANTRICSDL\\obj\\",
+        "outputPath": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
