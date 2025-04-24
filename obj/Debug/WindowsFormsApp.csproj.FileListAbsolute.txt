@@ -1,9 +1,0 @@
-C:\Workspace\ATBM HTTT\DA\data-management-application\bin\Debug\WindowsFormsApp.exe.config
-C:\Workspace\ATBM HTTT\DA\data-management-application\bin\Debug\WindowsFormsApp.exe
-C:\Workspace\ATBM HTTT\DA\data-management-application\bin\Debug\WindowsFormsApp.pdb
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.Properties.Resources.resources
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.exe
-C:\Workspace\ATBM HTTT\DA\data-management-application\obj\Debug\WindowsFormsApp.pdb
