@@ -1,0 +1,1 @@
+﻿GRANT :privileges ON :object TO :grantee :with_grant_option;
