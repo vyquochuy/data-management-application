@@ -1,0 +1,6 @@
+﻿Cài NuGet: racle.ManagedDataAccess
+
+Thông tin kết nối với máy
+string connectionString = 
+	"User Id=SYS;Password=123456;Data Source=127.0.0.1:1521/XEPDB1;DBA Privilege=SYSDBA;";
+
