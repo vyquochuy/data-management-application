@@ -93,6 +93,7 @@
             Controls.Add(btnThuHoiQuyen);
             Controls.Add(btnXemThongTinQuyen);
             Name = "MenuForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "QUẢN TRỊ ORACLE";
             Load += MenuForm_Load_1;
             ResumeLayout(false);

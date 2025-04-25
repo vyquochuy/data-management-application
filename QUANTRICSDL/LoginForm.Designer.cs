@@ -62,11 +62,12 @@
             bLogin.TabIndex = 3;
             bLogin.Text = "Đăng nhập";
             bLogin.UseVisualStyleBackColor = true;
+            bLogin.Click += bLogin_Click;
             // 
             // bExit
             // 
             bExit.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            bExit.Location = new Point(451, 166);
+            bExit.Location = new Point(446, 166);
             bExit.Name = "bExit";
             bExit.Size = new Size(125, 39);
             bExit.TabIndex = 4;
@@ -129,13 +130,16 @@
             // 
             // LoginForm
             // 
+            AcceptButton = bLogin;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = bExit;
             ClientSize = new Size(603, 234);
             Controls.Add(pBackground);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
+            Text = "Đăng nhập";
+            FormClosing += LoginForm_FormClosing;
             pBackground.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

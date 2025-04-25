@@ -21,5 +21,21 @@ namespace QUANTRICSDL
         {
             Application.Exit();
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void bLogin_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            this.Hide();
+            menuForm.ShowDialog();
+            this.Show();
+        }
     }
 }

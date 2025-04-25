@@ -15,8 +15,8 @@
             try
             {
                 var conn = DatabaseHelper.GetConnection();
-                MessageBox.Show("✅ Kết nối thành công!", "Thông báo");
-                conn.Close(); // Đừng quên đóng nha đại ca
+                MessageBox.Show("Kết nối thành công!", "Thông báo");
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -26,7 +26,10 @@
 
         private void btnQuanLyUserRole_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mở Form: Quản lý User/Role");
+            ManageForm manageForm = new ManageForm();
+            this.Hide();
+            manageForm.ShowDialog();
+            this.Show();
         }
 
         private void btnXemDanhSach_Click(object sender, EventArgs e)

@@ -38,3 +38,7 @@ D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\n
 D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.genruntimeconfig.cache
 D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\ref\QUANTRICSDL.dll
 D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.LoginForm.resources
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ManageForm.resources
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.CreateForm.resources
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.DeleteForm.resources
+D:\HuyMai\Y3-HK2\DatabaseSecurityInInformationSystem\App\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UpdateForm.resources
