@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QUANTRICSDL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e2f17d8611935a401eb8135c3346c30091cadcd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eead2906b67aab93612a896dbf24544e2dc0c1b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("QUANTRICSDL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QUANTRICSDL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

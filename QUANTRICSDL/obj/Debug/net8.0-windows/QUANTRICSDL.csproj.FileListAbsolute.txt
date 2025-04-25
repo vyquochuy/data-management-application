@@ -19,3 +19,4 @@ C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.genruntimeconfig.cache
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\ref\QUANTRICSDL.dll
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UserRoleList.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ObjectPrivilegesForm.resources

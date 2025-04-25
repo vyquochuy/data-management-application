@@ -34,10 +34,8 @@
         private void btnXemDanhSach_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             UserRoleList userRoleList = new UserRoleList();
             userRoleList.ShowDialog();
-
             this.Show();
 
         }
@@ -54,7 +52,10 @@
 
         private void btnXemThongTinQuyen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mở Form: Xem thông tin quyền");
+            this.Hide();
+            ObjectPrivilegesForm objForm = new ObjectPrivilegesForm();
+            objForm.ShowDialog();
+            this.Show();
         }
     }
 }

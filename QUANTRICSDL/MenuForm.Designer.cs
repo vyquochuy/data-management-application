@@ -39,47 +39,52 @@
             // 
             // btnQuanLyUserRole
             // 
-            btnQuanLyUserRole.Location = new Point(222, 41);
+            btnQuanLyUserRole.Location = new Point(254, 41);
             btnQuanLyUserRole.Name = "btnQuanLyUserRole";
             btnQuanLyUserRole.Size = new Size(300, 50);
             btnQuanLyUserRole.TabIndex = 0;
             btnQuanLyUserRole.Text = "1. Quản lý User / Role";
+            btnQuanLyUserRole.UseWaitCursor = true;
             btnQuanLyUserRole.Click += btnQuanLyUserRole_Click;
             // 
             // btnXemDanhSach
             // 
-            btnXemDanhSach.Location = new Point(222, 108);
+            btnXemDanhSach.Location = new Point(254, 109);
             btnXemDanhSach.Name = "btnXemDanhSach";
             btnXemDanhSach.Size = new Size(300, 50);
             btnXemDanhSach.TabIndex = 1;
             btnXemDanhSach.Text = "2. Xem danh sách User / Role";
+            btnXemDanhSach.UseWaitCursor = true;
             btnXemDanhSach.Click += btnXemDanhSach_Click;
             // 
             // btnCapQuyen
             // 
-            btnCapQuyen.Location = new Point(222, 179);
+            btnCapQuyen.Location = new Point(254, 179);
             btnCapQuyen.Name = "btnCapQuyen";
             btnCapQuyen.Size = new Size(300, 50);
             btnCapQuyen.TabIndex = 2;
             btnCapQuyen.Text = "3. Cấp quyền";
+            btnCapQuyen.UseWaitCursor = true;
             btnCapQuyen.Click += btnCapQuyen_Click;
             // 
             // btnThuHoiQuyen
             // 
-            btnThuHoiQuyen.Location = new Point(222, 249);
+            btnThuHoiQuyen.Location = new Point(254, 249);
             btnThuHoiQuyen.Name = "btnThuHoiQuyen";
             btnThuHoiQuyen.Size = new Size(300, 50);
             btnThuHoiQuyen.TabIndex = 3;
             btnThuHoiQuyen.Text = "4. Thu hồi quyền";
+            btnThuHoiQuyen.UseWaitCursor = true;
             btnThuHoiQuyen.Click += btnThuHoiQuyen_Click;
             // 
             // btnXemThongTinQuyen
             // 
-            btnXemThongTinQuyen.Location = new Point(222, 322);
+            btnXemThongTinQuyen.Location = new Point(254, 322);
             btnXemThongTinQuyen.Name = "btnXemThongTinQuyen";
             btnXemThongTinQuyen.Size = new Size(300, 50);
             btnXemThongTinQuyen.TabIndex = 4;
-            btnXemThongTinQuyen.Text = "5. Xem thông tin quyền";
+            btnXemThongTinQuyen.Text = "5. Xem quyền theo đối tượng";
+            btnXemThongTinQuyen.UseWaitCursor = true;
             btnXemThongTinQuyen.Click += btnXemThongTinQuyen_Click;
             // 
             // MenuForm
@@ -94,6 +99,7 @@
             Controls.Add(btnXemThongTinQuyen);
             Name = "MenuForm";
             Text = "QUẢN TRỊ ORACLE";
+            UseWaitCursor = true;
             ResumeLayout(false);
         }
 
