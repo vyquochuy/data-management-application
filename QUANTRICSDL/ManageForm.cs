@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QUANTRICSDL
+{
+    public partial class ManageForm : Form
+    {
+        public ManageForm()
+        {
+            InitializeComponent();
+        }
+
+        private void bCreate_Click(object sender, EventArgs e)
+        {
+            CreateForm createForm = new CreateForm();
+            this.Hide();
+            createForm.ShowDialog();
+            this.Show();
+        }
+
+        private void bDelete_Click(object sender, EventArgs e)
+        {
+            DeleteForm deleteForm = new DeleteForm();
+            this.Hide();
+            deleteForm.ShowDialog();
+            this.Show();
+        }
+
+        private void bBack_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            this.Hide();
+            menuForm.ShowDialog();
+            this.Show();
+        }
+
+        private void bUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm();
+            this.Hide();
+            updateForm.ShowDialog();
+            this.Show();
+        }
+    }
+}
