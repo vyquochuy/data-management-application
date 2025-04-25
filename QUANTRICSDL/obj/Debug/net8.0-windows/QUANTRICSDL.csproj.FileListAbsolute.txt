@@ -20,3 +20,8 @@ C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\ref\QUANTRICSDL.dll
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UserRoleList.resources
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ObjectPrivilegesForm.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ManageForm.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.CreateForm.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.DeleteForm.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.LoginForm.resources
+C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UpdateForm.resources

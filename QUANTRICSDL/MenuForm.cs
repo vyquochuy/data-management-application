@@ -5,7 +5,6 @@
         public MenuForm()
         {
             InitializeComponent();
-
             FormHelper.SetStandardSize(this);
             // TODO: kết nối đb
             //this.Load += new System.EventHandler(this.MenuForm_Load);
@@ -18,7 +17,7 @@
             {
                 var conn = DatabaseHelper.GetConnection();
                 MessageBox.Show("Kết nối thành công!", "Thông báo");
-                conn.Close(); // Đừng quên đóng nha đại ca
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -28,34 +27,33 @@
 
         private void btnQuanLyUserRole_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mở Form: Quản lý User/Role");
+            ManageForm manageForm = new ManageForm();
+            this.Hide();
+            manageForm.ShowDialog();
+            this.Show();
         }
 
         private void btnXemDanhSach_Click(object sender, EventArgs e)
         {
-            this.Hide();
             UserRoleList userRoleList = new UserRoleList();
+            this.Hide();
             userRoleList.ShowDialog();
             this.Show();
-
         }
 
-        private void btnCapQuyen_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Mở Form: Cấp quyền");
-        }
-
-        private void btnThuHoiQuyen_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Mở Form: Thu hồi quyền");
-        }
+    
 
         private void btnXemThongTinQuyen_Click(object sender, EventArgs e)
         {
+            ObjectPrivilegesForm objectPrivilegesForm = new ObjectPrivilegesForm();
             this.Hide();
-            ObjectPrivilegesForm objForm = new ObjectPrivilegesForm();
-            objForm.ShowDialog();
+            objectPrivilegesForm.ShowDialog();
             this.Show();
+        }
+
+        private void MenuForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
