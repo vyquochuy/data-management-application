@@ -5,10 +5,8 @@ CREATE PLUGGABLE DATABASE QLCSDL
 ADMIN USER admin IDENTIFIED BY 123
 ROLES = (DBA)
 -- điều chỉnh cho đúng với máy
-FILE_NAME_CONVERT = ('C:\Oracle\app\vyquochuy\oradata\ORCL\pdbseed', 
-                     'C:\Oracle\app\vyquochuy\oradata\ORCL\QLCSDL');
-                     
-                     
+FILE_NAME_CONVERT = ('pdbseed', 'QLCSDL');
+
 -- Mở PDB
 ALTER PLUGGABLE DATABASE QLCSDL OPEN;
 
