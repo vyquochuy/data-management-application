@@ -24,16 +24,12 @@
 
         private Button btnQuanLyUserRole;
         private Button btnXemDanhSach;
-        private Button btnCapQuyen;
-        private Button btnThuHoiQuyen;
         private Button btnXemThongTinQuyen;
 
         private void InitializeComponent()
         {
             btnQuanLyUserRole = new Button();
             btnXemDanhSach = new Button();
-            btnCapQuyen = new Button();
-            btnThuHoiQuyen = new Button();
             btnXemThongTinQuyen = new Button();
             SuspendLayout();
             // 
@@ -55,27 +51,9 @@
             btnXemDanhSach.Text = "2. Xem danh sách User / Role";
             btnXemDanhSach.Click += btnXemDanhSach_Click;
             // 
-            // btnCapQuyen
-            // 
-            btnCapQuyen.Location = new Point(50, 180);
-            btnCapQuyen.Name = "btnCapQuyen";
-            btnCapQuyen.Size = new Size(300, 50);
-            btnCapQuyen.TabIndex = 2;
-            btnCapQuyen.Text = "3. Cấp quyền";
-            btnCapQuyen.Click += btnCapQuyen_Click;
-            // 
-            // btnThuHoiQuyen
-            // 
-            btnThuHoiQuyen.Location = new Point(50, 250);
-            btnThuHoiQuyen.Name = "btnThuHoiQuyen";
-            btnThuHoiQuyen.Size = new Size(300, 50);
-            btnThuHoiQuyen.TabIndex = 3;
-            btnThuHoiQuyen.Text = "4. Thu hồi quyền";
-            btnThuHoiQuyen.Click += btnThuHoiQuyen_Click;
-            // 
             // btnXemThongTinQuyen
             // 
-            btnXemThongTinQuyen.Location = new Point(50, 320);
+            btnXemThongTinQuyen.Location = new Point(50, 180);
             btnXemThongTinQuyen.Name = "btnXemThongTinQuyen";
             btnXemThongTinQuyen.Size = new Size(300, 50);
             btnXemThongTinQuyen.TabIndex = 4;
@@ -86,11 +64,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(420, 420);
+            ClientSize = new Size(420, 272);
             Controls.Add(btnQuanLyUserRole);
             Controls.Add(btnXemDanhSach);
-            Controls.Add(btnCapQuyen);
-            Controls.Add(btnThuHoiQuyen);
             Controls.Add(btnXemThongTinQuyen);
             Name = "MenuForm";
             StartPosition = FormStartPosition.CenterScreen;

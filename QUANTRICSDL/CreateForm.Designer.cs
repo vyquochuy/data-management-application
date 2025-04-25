@@ -35,9 +35,9 @@
             tpUser = new TabPage();
             bCreate = new Button();
             bBack = new Button();
-            pNote = new Panel();
-            textBox3 = new TextBox();
-            lNote = new Label();
+            pPower = new Panel();
+            cbPower = new CheckBox();
+            lPower = new Label();
             pId = new Panel();
             textBox2 = new TextBox();
             lId = new Label();
@@ -60,6 +60,9 @@
             tbUsername = new TextBox();
             lUsername = new Label();
             tpRole = new TabPage();
+            pPower2 = new Panel();
+            cbPower2 = new CheckBox();
+            lPower2 = new Label();
             bCreate2 = new Button();
             bBack2 = new Button();
             gb = new GroupBox();
@@ -72,16 +75,13 @@
             pSelect = new Panel();
             tbSelect = new TextBox();
             lSelect = new Label();
-            pRoleDescription = new Panel();
-            tbRoleDescription = new TextBox();
-            lRoleDescription = new Label();
             pRoleName = new Panel();
             textBox4 = new TextBox();
             lRoleName = new Label();
             panel1.SuspendLayout();
             tcCreate.SuspendLayout();
             tpUser.SuspendLayout();
-            pNote.SuspendLayout();
+            pPower.SuspendLayout();
             pId.SuspendLayout();
             pPosition.SuspendLayout();
             pFullName.SuspendLayout();
@@ -90,11 +90,11 @@
             pPassword.SuspendLayout();
             pUsername.SuspendLayout();
             tpRole.SuspendLayout();
+            pPower2.SuspendLayout();
             gb.SuspendLayout();
             pDelete.SuspendLayout();
             pInsert.SuspendLayout();
             pSelect.SuspendLayout();
-            pRoleDescription.SuspendLayout();
             pRoleName.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,7 +126,7 @@
             // 
             tpUser.Controls.Add(bCreate);
             tpUser.Controls.Add(bBack);
-            tpUser.Controls.Add(pNote);
+            tpUser.Controls.Add(pPower);
             tpUser.Controls.Add(pId);
             tpUser.Controls.Add(pPosition);
             tpUser.Controls.Add(pFullName);
@@ -151,6 +151,7 @@
             bCreate.TabIndex = 10;
             bCreate.Text = "Tạo mới";
             bCreate.UseVisualStyleBackColor = true;
+            bCreate.Click += bCreate_Click;
             // 
             // bBack
             // 
@@ -163,30 +164,33 @@
             bBack.UseVisualStyleBackColor = true;
             bBack.Click += bBack_Click;
             // 
-            // pNote
+            // pPower
             // 
-            pNote.Controls.Add(textBox3);
-            pNote.Controls.Add(lNote);
-            pNote.Location = new Point(6, 206);
-            pNote.Name = "pNote";
-            pNote.Size = new Size(750, 34);
-            pNote.TabIndex = 8;
+            pPower.Controls.Add(cbPower);
+            pPower.Controls.Add(lPower);
+            pPower.Location = new Point(6, 206);
+            pPower.Name = "pPower";
+            pPower.Size = new Size(750, 34);
+            pPower.TabIndex = 8;
             // 
-            // textBox3
+            // cbPower
             // 
-            textBox3.Location = new Point(119, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(626, 27);
-            textBox3.TabIndex = 1;
+            cbPower.AutoSize = true;
+            cbPower.Location = new Point(341, 0);
+            cbPower.Name = "cbPower";
+            cbPower.Size = new Size(49, 24);
+            cbPower.TabIndex = 1;
+            cbPower.Text = "Có";
+            cbPower.UseVisualStyleBackColor = true;
             // 
-            // lNote
+            // lPower
             // 
-            lNote.AutoSize = true;
-            lNote.Location = new Point(0, 0);
-            lNote.Name = "lNote";
-            lNote.Size = new Size(61, 20);
-            lNote.TabIndex = 0;
-            lNote.Text = "Ghi chú:";
+            lPower.AutoSize = true;
+            lPower.Location = new Point(0, 0);
+            lPower.Name = "lPower";
+            lPower.Size = new Size(313, 20);
+            lPower.TabIndex = 0;
+            lPower.Text = "Được phép cấp quyền tương tự cho user khác:";
             // 
             // pId
             // 
@@ -305,6 +309,7 @@
             cbRole.Name = "cbRole";
             cbRole.Size = new Size(271, 28);
             cbRole.TabIndex = 1;
+            cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
             // lRole
             // 
@@ -367,10 +372,10 @@
             // 
             // tpRole
             // 
+            tpRole.Controls.Add(pPower2);
             tpRole.Controls.Add(bCreate2);
             tpRole.Controls.Add(bBack2);
             tpRole.Controls.Add(gb);
-            tpRole.Controls.Add(pRoleDescription);
             tpRole.Controls.Add(pRoleName);
             tpRole.Location = new Point(4, 29);
             tpRole.Name = "tpRole";
@@ -379,6 +384,34 @@
             tpRole.TabIndex = 1;
             tpRole.Text = "Vai trò";
             tpRole.UseVisualStyleBackColor = true;
+            // 
+            // pPower2
+            // 
+            pPower2.Controls.Add(cbPower2);
+            pPower2.Controls.Add(lPower2);
+            pPower2.Location = new Point(6, 46);
+            pPower2.Name = "pPower2";
+            pPower2.Size = new Size(750, 34);
+            pPower2.TabIndex = 13;
+            // 
+            // cbPower2
+            // 
+            cbPower2.AutoSize = true;
+            cbPower2.Location = new Point(341, 0);
+            cbPower2.Name = "cbPower2";
+            cbPower2.Size = new Size(49, 24);
+            cbPower2.TabIndex = 1;
+            cbPower2.Text = "Có";
+            cbPower2.UseVisualStyleBackColor = true;
+            // 
+            // lPower2
+            // 
+            lPower2.AutoSize = true;
+            lPower2.Location = new Point(0, 0);
+            lPower2.Name = "lPower2";
+            lPower2.Size = new Size(312, 20);
+            lPower2.TabIndex = 0;
+            lPower2.Text = "Được phép cấp quyền tương tự cho role khác:";
             // 
             // bCreate2
             // 
@@ -389,6 +422,7 @@
             bCreate2.TabIndex = 12;
             bCreate2.Text = "Tạo mới";
             bCreate2.UseVisualStyleBackColor = true;
+            bCreate2.Click += bCreate2_Click;
             // 
             // bBack2
             // 
@@ -497,31 +531,6 @@
             lSelect.TabIndex = 0;
             lSelect.Text = "Select:";
             // 
-            // pRoleDescription
-            // 
-            pRoleDescription.Controls.Add(tbRoleDescription);
-            pRoleDescription.Controls.Add(lRoleDescription);
-            pRoleDescription.Location = new Point(6, 46);
-            pRoleDescription.Name = "pRoleDescription";
-            pRoleDescription.Size = new Size(750, 34);
-            pRoleDescription.TabIndex = 2;
-            // 
-            // tbRoleDescription
-            // 
-            tbRoleDescription.Location = new Point(119, 3);
-            tbRoleDescription.Name = "tbRoleDescription";
-            tbRoleDescription.Size = new Size(628, 27);
-            tbRoleDescription.TabIndex = 1;
-            // 
-            // lRoleDescription
-            // 
-            lRoleDescription.AutoSize = true;
-            lRoleDescription.Location = new Point(3, 0);
-            lRoleDescription.Name = "lRoleDescription";
-            lRoleDescription.Size = new Size(51, 20);
-            lRoleDescription.TabIndex = 0;
-            lRoleDescription.Text = "Mô tả:";
-            // 
             // pRoleName
             // 
             pRoleName.Controls.Add(textBox4);
@@ -561,8 +570,8 @@
             panel1.ResumeLayout(false);
             tcCreate.ResumeLayout(false);
             tpUser.ResumeLayout(false);
-            pNote.ResumeLayout(false);
-            pNote.PerformLayout();
+            pPower.ResumeLayout(false);
+            pPower.PerformLayout();
             pId.ResumeLayout(false);
             pId.PerformLayout();
             pPosition.ResumeLayout(false);
@@ -578,6 +587,8 @@
             pUsername.ResumeLayout(false);
             pUsername.PerformLayout();
             tpRole.ResumeLayout(false);
+            pPower2.ResumeLayout(false);
+            pPower2.PerformLayout();
             gb.ResumeLayout(false);
             pDelete.ResumeLayout(false);
             pDelete.PerformLayout();
@@ -585,8 +596,6 @@
             pInsert.PerformLayout();
             pSelect.ResumeLayout(false);
             pSelect.PerformLayout();
-            pRoleDescription.ResumeLayout(false);
-            pRoleDescription.PerformLayout();
             pRoleName.ResumeLayout(false);
             pRoleName.PerformLayout();
             ResumeLayout(false);
@@ -620,17 +629,13 @@
         private Panel pPosition;
         private ComboBox cbPosition;
         private Label lPosition;
-        private Panel pNote;
-        private TextBox textBox3;
-        private Label lNote;
+        private Panel pPower;
+        private Label lPower;
         private Button bCreate;
         private Button bBack;
         private Panel pRoleName;
         private TextBox textBox4;
         private Label lRoleName;
-        private Panel pRoleDescription;
-        private TextBox tbRoleDescription;
-        private Label lRoleDescription;
         private Button bCreate2;
         private Button bBack2;
         private GroupBox gb;
@@ -643,5 +648,9 @@
         private Panel pDelete;
         private TextBox tbDelete;
         private Label lDelete;
+        private CheckBox cbPower;
+        private Panel pPower2;
+        private CheckBox cbPower2;
+        private Label lPower2;
     }
 }

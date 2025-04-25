@@ -30,23 +30,23 @@
         {
             pBackground = new Panel();
             bBack = new Button();
-            bUpdate = new Button();
             bDelete = new Button();
             bCreate = new Button();
             lAnnouncement = new Label();
+            bUpdate = new Button();
             pBackground.SuspendLayout();
             SuspendLayout();
             // 
             // pBackground
             // 
-            pBackground.Controls.Add(bBack);
             pBackground.Controls.Add(bUpdate);
+            pBackground.Controls.Add(bBack);
             pBackground.Controls.Add(bDelete);
             pBackground.Controls.Add(bCreate);
             pBackground.Controls.Add(lAnnouncement);
             pBackground.Location = new Point(12, 12);
             pBackground.Name = "pBackground";
-            pBackground.Size = new Size(418, 314);
+            pBackground.Size = new Size(418, 310);
             pBackground.TabIndex = 0;
             // 
             // bBack
@@ -59,17 +59,6 @@
             bBack.Text = "Quay lại";
             bBack.UseVisualStyleBackColor = true;
             bBack.Click += bBack_Click;
-            // 
-            // bUpdate
-            // 
-            bUpdate.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bUpdate.Location = new Point(133, 172);
-            bUpdate.Name = "bUpdate";
-            bUpdate.Size = new Size(152, 62);
-            bUpdate.TabIndex = 3;
-            bUpdate.Text = "Sửa";
-            bUpdate.UseVisualStyleBackColor = true;
-            bUpdate.Click += bUpdate_Click;
             // 
             // bDelete
             // 
@@ -103,11 +92,22 @@
             lAnnouncement.TabIndex = 0;
             lAnnouncement.Text = "Bạn muốn làm gì?";
             // 
+            // bUpdate
+            // 
+            bUpdate.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bUpdate.Location = new Point(133, 172);
+            bUpdate.Name = "bUpdate";
+            bUpdate.Size = new Size(152, 62);
+            bUpdate.TabIndex = 5;
+            bUpdate.Text = "Sửa";
+            bUpdate.UseVisualStyleBackColor = true;
+            bUpdate.Click += bUpdate_Click;
+            // 
             // ManageForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(442, 337);
+            ClientSize = new Size(442, 329);
             Controls.Add(pBackground);
             Name = "ManageForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -122,8 +122,8 @@
         private Panel pBackground;
         private Label lAnnouncement;
         private Button bCreate;
-        private Button bUpdate;
         private Button bDelete;
         private Button bBack;
+        private Button bUpdate;
     }
 }

@@ -33,19 +33,19 @@ namespace QUANTRICSDL
             this.Show();
         }
 
-        private void bUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateForm updateForm = new UpdateForm();
-            this.Hide();
-            updateForm.ShowDialog();
-            this.Show();
-        }
-
         private void bBack_Click(object sender, EventArgs e)
         {
             MenuForm menuForm = new MenuForm();
             this.Hide();
             menuForm.ShowDialog();
+            this.Show();
+        }
+
+        private void bUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm();
+            this.Hide();
+            updateForm.ShowDialog();
             this.Show();
         }
     }
