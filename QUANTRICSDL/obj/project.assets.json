@@ -379,23 +379,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hvo64\\.nuget\\packages\\": {},
+    "C:\\Users\\vyquochuy\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
+      "projectUniqueName": "D:\\Data Security in Information Systems\\labs\\DoAn\\GK\\WindowsFormsApp\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
       "projectName": "QUANTRICSDL",
-      "projectPath": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
-      "packagesPath": "C:\\Users\\hvo64\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\ATBM HTTT\\DA\\data-management-application\\QUANTRICSDL\\obj\\",
+      "projectPath": "D:\\Data Security in Information Systems\\labs\\DoAn\\GK\\WindowsFormsApp\\data-management-application\\QUANTRICSDL\\QUANTRICSDL.csproj",
+      "packagesPath": "C:\\Users\\vyquochuy\\.nuget\\packages\\",
+      "outputPath": "D:\\Data Security in Information Systems\\labs\\DoAn\\GK\\WindowsFormsApp\\data-management-application\\QUANTRICSDL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hvo64\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vyquochuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -452,7 +452,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

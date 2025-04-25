@@ -25,3 +25,30 @@ C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.DeleteForm.resources
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.LoginForm.resources
 C:\Workspace\ATBM HTTT\DA\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UpdateForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.exe
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.deps.json
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.runtimeconfig.json
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.dll
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\QUANTRICSDL.pdb
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.AssemblyReference.cache
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.CreateForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.DeleteForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.LoginForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ManageForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.MenuForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.ObjectPrivilegesForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UpdateForm.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.UserRoleList.resources
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.GenerateResource.cache
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.AssemblyInfoInputs.cache
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.AssemblyInfo.cs
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.csproj.CoreCompileInputs.cache
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.sourcelink.json
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRIC.07FD67E3.Up2Date
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.dll
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\refint\QUANTRICSDL.dll
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.pdb
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\QUANTRICSDL.genruntimeconfig.cache
+D:\Data Security in Information Systems\labs\DoAn\GK\WindowsFormsApp\data-management-application\QUANTRICSDL\obj\Debug\net8.0-windows\ref\QUANTRICSDL.dll
