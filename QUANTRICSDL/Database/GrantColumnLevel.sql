@@ -1,0 +1,1 @@
+﻿GRANT SELECT (:columns), UPDATE (:columns) ON :table_name TO :grantee;

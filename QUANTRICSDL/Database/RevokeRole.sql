@@ -1,0 +1,1 @@
+﻿REVOKE :rolename FROM :username;
