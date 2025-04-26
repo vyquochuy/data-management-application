@@ -42,10 +42,10 @@ namespace QUANTRICSDL
 
         private void bCreate_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text.Trim(); // Giả sử có TextBox tbUsername
-            // string password = tbPassword.Text.Trim(); // Giả sử có TextBox tbPassword
+            string username = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty("password"))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
@@ -53,7 +53,7 @@ namespace QUANTRICSDL
 
             try
             {
-                string sql = $"CREATE USER {username} IDENTIFIED BY {"password"}";
+                string sql = $"CREATE USER {username} IDENTIFIED BY {password}";
 
                 DatabaseHelper.ExecuteNonQuery(sql);
                 MessageBox.Show("Tạo user thành công!");
@@ -68,5 +68,6 @@ namespace QUANTRICSDL
         {
             //TODO: làm combo box chọn role, hiển thị dropdown có check box, cho phép chọn nhiều role
         }
+        
     }
 }

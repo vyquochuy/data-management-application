@@ -22,7 +22,8 @@ GRANT UNLIMITED TABLESPACE TO school_user;
 
 -- Kết nối với user
 CONNECT school_user/123@localhost:1521/QLCSDL;
-
+-- SHOW CON_NAME;
+-- SELECT username, 'OPEN' AS account_status FROM all_users
 -- Xóa bảng con trước
 -- DROP TABLE ĐANGKY CASCADE CONSTRAINTS;
 -- DROP TABLE MOMON CASCADE CONSTRAINTS;

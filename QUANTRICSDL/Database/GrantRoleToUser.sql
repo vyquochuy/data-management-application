@@ -1,1 +1,0 @@
-﻿GRANT :rolename TO :username;

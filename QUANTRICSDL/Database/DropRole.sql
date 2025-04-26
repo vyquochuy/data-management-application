@@ -1,1 +1,0 @@
-﻿DROP ROLE :rolename;

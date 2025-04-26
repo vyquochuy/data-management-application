@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,8 +41,19 @@ namespace QUANTRICSDL
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-            //TODO: thực hiện hàm sửa ở đây và kiểm tra xem đối tượng được sửa có phù hợp không
-            MessageBox.Show("Sửa thành công!");
+            string username = tbUsername.Text.Trim();
+            string newPassword = tbPassword.Text.Trim(); // Giả sử có TextBox tbNewPassword
+
+            try
+            {
+                string sql = $"ALTER USER {username} IDENTIFIED BY {newPassword}";
+                DatabaseHelper.ExecuteNonQuery(sql);
+                MessageBox.Show("Cập nhật user thành công!");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi cập nhật user", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bUpdate2_Click(object sender, EventArgs e)

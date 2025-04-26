@@ -29,7 +29,7 @@ public static class DatabaseHelper
 
     public static DataTable ExecuteQuery(string sql)
     {
-        using (var conn = GetConnection())
+        using (var conn = new OracleConnection(connectionString))
         {
             conn.Open();
             using (var cmd = new OracleCommand(sql, conn))

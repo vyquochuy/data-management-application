@@ -54,7 +54,7 @@
             cbRole = new ComboBox();
             lRole = new Label();
             pPassword = new Panel();
-            textBox1 = new TextBox();
+            tbPassword = new TextBox();
             lPassword = new Label();
             pUsername = new Panel();
             tbUsername = new TextBox();
@@ -107,19 +107,21 @@
             // panel1
             // 
             panel1.Controls.Add(tcCreate);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(10, 9);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(776, 408);
+            panel1.Size = new Size(679, 306);
             panel1.TabIndex = 1;
             // 
             // tcCreate
             // 
             tcCreate.Controls.Add(tpUser);
             tcCreate.Controls.Add(tpRole);
-            tcCreate.Location = new Point(3, 3);
+            tcCreate.Location = new Point(3, 2);
+            tcCreate.Margin = new Padding(3, 2, 3, 2);
             tcCreate.Name = "tcCreate";
             tcCreate.SelectedIndex = 0;
-            tcCreate.Size = new Size(770, 401);
+            tcCreate.Size = new Size(674, 301);
             tcCreate.TabIndex = 0;
             // 
             // tpUser
@@ -134,10 +136,11 @@
             tpUser.Controls.Add(pRole);
             tpUser.Controls.Add(pPassword);
             tpUser.Controls.Add(pUsername);
-            tpUser.Location = new Point(4, 29);
+            tpUser.Location = new Point(4, 24);
+            tpUser.Margin = new Padding(3, 2, 3, 2);
             tpUser.Name = "tpUser";
-            tpUser.Padding = new Padding(3);
-            tpUser.Size = new Size(762, 368);
+            tpUser.Padding = new Padding(3, 2, 3, 2);
+            tpUser.Size = new Size(666, 273);
             tpUser.TabIndex = 0;
             tpUser.Text = "Người dùng";
             tpUser.UseVisualStyleBackColor = true;
@@ -145,9 +148,10 @@
             // bCreate
             // 
             bCreate.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            bCreate.Location = new Point(266, 246);
+            bCreate.Location = new Point(233, 184);
+            bCreate.Margin = new Padding(3, 2, 3, 2);
             bCreate.Name = "bCreate";
-            bCreate.Size = new Size(133, 58);
+            bCreate.Size = new Size(116, 44);
             bCreate.TabIndex = 10;
             bCreate.Text = "Tạo mới";
             bCreate.UseVisualStyleBackColor = true;
@@ -156,9 +160,10 @@
             // bBack
             // 
             bBack.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            bBack.Location = new Point(405, 246);
+            bBack.Location = new Point(354, 184);
+            bBack.Margin = new Padding(3, 2, 3, 2);
             bBack.Name = "bBack";
-            bBack.Size = new Size(133, 58);
+            bBack.Size = new Size(116, 44);
             bBack.TabIndex = 9;
             bBack.Text = "Quay lại";
             bBack.UseVisualStyleBackColor = true;
@@ -168,17 +173,19 @@
             // 
             pPower.Controls.Add(cbPower);
             pPower.Controls.Add(lPower);
-            pPower.Location = new Point(6, 206);
+            pPower.Location = new Point(5, 154);
+            pPower.Margin = new Padding(3, 2, 3, 2);
             pPower.Name = "pPower";
-            pPower.Size = new Size(750, 34);
+            pPower.Size = new Size(656, 26);
             pPower.TabIndex = 8;
             // 
             // cbPower
             // 
             cbPower.AutoSize = true;
-            cbPower.Location = new Point(341, 0);
+            cbPower.Location = new Point(298, 0);
+            cbPower.Margin = new Padding(3, 2, 3, 2);
             cbPower.Name = "cbPower";
-            cbPower.Size = new Size(49, 24);
+            cbPower.Size = new Size(41, 19);
             cbPower.TabIndex = 1;
             cbPower.Text = "Có";
             cbPower.UseVisualStyleBackColor = true;
@@ -188,7 +195,7 @@
             lPower.AutoSize = true;
             lPower.Location = new Point(0, 0);
             lPower.Name = "lPower";
-            lPower.Size = new Size(313, 20);
+            lPower.Size = new Size(251, 15);
             lPower.TabIndex = 0;
             lPower.Text = "Được phép cấp quyền tương tự cho user khác:";
             // 
@@ -196,24 +203,26 @@
             // 
             pId.Controls.Add(textBox2);
             pId.Controls.Add(lId);
-            pId.Location = new Point(405, 166);
+            pId.Location = new Point(354, 124);
+            pId.Margin = new Padding(3, 2, 3, 2);
             pId.Name = "pId";
-            pId.Size = new Size(351, 34);
+            pId.Size = new Size(307, 26);
             pId.TabIndex = 6;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(82, 3);
+            textBox2.Location = new Point(72, 2);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(264, 27);
+            textBox2.Size = new Size(232, 23);
             textBox2.TabIndex = 1;
             // 
             // lId
             // 
             lId.AutoSize = true;
-            lId.Location = new Point(3, 3);
+            lId.Location = new Point(3, 2);
             lId.Name = "lId";
-            lId.Size = new Size(52, 20);
+            lId.Size = new Size(42, 15);
             lId.TabIndex = 0;
             lId.Text = "Mã số:";
             // 
@@ -221,17 +230,19 @@
             // 
             pPosition.Controls.Add(cbPosition);
             pPosition.Controls.Add(lPosition);
-            pPosition.Location = new Point(6, 126);
+            pPosition.Location = new Point(5, 94);
+            pPosition.Margin = new Padding(3, 2, 3, 2);
             pPosition.Name = "pPosition";
-            pPosition.Size = new Size(393, 34);
+            pPosition.Size = new Size(344, 26);
             pPosition.TabIndex = 5;
             // 
             // cbPosition
             // 
             cbPosition.FormattingEnabled = true;
-            cbPosition.Location = new Point(119, -3);
+            cbPosition.Location = new Point(104, -2);
+            cbPosition.Margin = new Padding(3, 2, 3, 2);
             cbPosition.Name = "cbPosition";
-            cbPosition.Size = new Size(271, 28);
+            cbPosition.Size = new Size(238, 23);
             cbPosition.TabIndex = 1;
             // 
             // lPosition
@@ -239,7 +250,7 @@
             lPosition.AutoSize = true;
             lPosition.Location = new Point(3, 0);
             lPosition.Name = "lPosition";
-            lPosition.Size = new Size(64, 20);
+            lPosition.Size = new Size(54, 15);
             lPosition.TabIndex = 0;
             lPosition.Text = "Chức vụ:";
             // 
@@ -247,16 +258,18 @@
             // 
             pFullName.Controls.Add(tbFullName);
             pFullName.Controls.Add(lFullName);
-            pFullName.Location = new Point(6, 166);
+            pFullName.Location = new Point(5, 124);
+            pFullName.Margin = new Padding(3, 2, 3, 2);
             pFullName.Name = "pFullName";
-            pFullName.Size = new Size(393, 34);
+            pFullName.Size = new Size(344, 26);
             pFullName.TabIndex = 4;
             // 
             // tbFullName
             // 
-            tbFullName.Location = new Point(119, 3);
+            tbFullName.Location = new Point(104, 2);
+            tbFullName.Margin = new Padding(3, 2, 3, 2);
             tbFullName.Name = "tbFullName";
-            tbFullName.Size = new Size(271, 27);
+            tbFullName.Size = new Size(238, 23);
             tbFullName.TabIndex = 1;
             // 
             // lFullName
@@ -264,7 +277,7 @@
             lFullName.AutoSize = true;
             lFullName.Location = new Point(0, 0);
             lFullName.Name = "lFullName";
-            lFullName.Size = new Size(76, 20);
+            lFullName.Size = new Size(61, 15);
             lFullName.TabIndex = 0;
             lFullName.Text = "Họ và tên:";
             // 
@@ -272,16 +285,18 @@
             // 
             pPhoneNumber.Controls.Add(tbPhoneNumber);
             pPhoneNumber.Controls.Add(lPhoneNumber);
-            pPhoneNumber.Location = new Point(6, 86);
+            pPhoneNumber.Location = new Point(5, 64);
+            pPhoneNumber.Margin = new Padding(3, 2, 3, 2);
             pPhoneNumber.Name = "pPhoneNumber";
-            pPhoneNumber.Size = new Size(393, 34);
+            pPhoneNumber.Size = new Size(344, 26);
             pPhoneNumber.TabIndex = 3;
             // 
             // tbPhoneNumber
             // 
-            tbPhoneNumber.Location = new Point(119, 3);
+            tbPhoneNumber.Location = new Point(104, 2);
+            tbPhoneNumber.Margin = new Padding(3, 2, 3, 2);
             tbPhoneNumber.Name = "tbPhoneNumber";
-            tbPhoneNumber.Size = new Size(271, 27);
+            tbPhoneNumber.Size = new Size(238, 23);
             tbPhoneNumber.TabIndex = 1;
             // 
             // lPhoneNumber
@@ -289,7 +304,7 @@
             lPhoneNumber.AutoSize = true;
             lPhoneNumber.Location = new Point(0, 0);
             lPhoneNumber.Name = "lPhoneNumber";
-            lPhoneNumber.Size = new Size(100, 20);
+            lPhoneNumber.Size = new Size(79, 15);
             lPhoneNumber.TabIndex = 0;
             lPhoneNumber.Text = "Số điện thoại:";
             // 
@@ -297,17 +312,19 @@
             // 
             pRole.Controls.Add(cbRole);
             pRole.Controls.Add(lRole);
-            pRole.Location = new Point(6, 46);
+            pRole.Location = new Point(5, 34);
+            pRole.Margin = new Padding(3, 2, 3, 2);
             pRole.Name = "pRole";
-            pRole.Size = new Size(393, 34);
+            pRole.Size = new Size(344, 26);
             pRole.TabIndex = 2;
             // 
             // cbRole
             // 
             cbRole.FormattingEnabled = true;
-            cbRole.Location = new Point(119, -3);
+            cbRole.Location = new Point(104, -2);
+            cbRole.Margin = new Padding(3, 2, 3, 2);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(271, 28);
+            cbRole.Size = new Size(238, 23);
             cbRole.TabIndex = 1;
             cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
@@ -316,32 +333,34 @@
             lRole.AutoSize = true;
             lRole.Location = new Point(3, 0);
             lRole.Name = "lRole";
-            lRole.Size = new Size(55, 20);
+            lRole.Size = new Size(43, 15);
             lRole.TabIndex = 0;
             lRole.Text = "Vai trò:";
             // 
             // pPassword
             // 
-            pPassword.Controls.Add(textBox1);
+            pPassword.Controls.Add(tbPassword);
             pPassword.Controls.Add(lPassword);
-            pPassword.Location = new Point(405, 6);
+            pPassword.Location = new Point(354, 4);
+            pPassword.Margin = new Padding(3, 2, 3, 2);
             pPassword.Name = "pPassword";
-            pPassword.Size = new Size(351, 34);
+            pPassword.Size = new Size(307, 26);
             pPassword.TabIndex = 1;
             // 
-            // textBox1
+            // tbPassword
             // 
-            textBox1.Location = new Point(82, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(264, 27);
-            textBox1.TabIndex = 1;
+            tbPassword.Location = new Point(72, 2);
+            tbPassword.Margin = new Padding(3, 2, 3, 2);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(232, 23);
+            tbPassword.TabIndex = 1;
             // 
             // lPassword
             // 
             lPassword.AutoSize = true;
-            lPassword.Location = new Point(3, 3);
+            lPassword.Location = new Point(3, 2);
             lPassword.Name = "lPassword";
-            lPassword.Size = new Size(73, 20);
+            lPassword.Size = new Size(60, 15);
             lPassword.TabIndex = 0;
             lPassword.Text = "Mật khẩu:";
             // 
@@ -349,16 +368,18 @@
             // 
             pUsername.Controls.Add(tbUsername);
             pUsername.Controls.Add(lUsername);
-            pUsername.Location = new Point(6, 6);
+            pUsername.Location = new Point(5, 4);
+            pUsername.Margin = new Padding(3, 2, 3, 2);
             pUsername.Name = "pUsername";
-            pUsername.Size = new Size(393, 34);
+            pUsername.Size = new Size(344, 26);
             pUsername.TabIndex = 0;
             // 
             // tbUsername
             // 
-            tbUsername.Location = new Point(119, 3);
+            tbUsername.Location = new Point(104, 2);
+            tbUsername.Margin = new Padding(3, 2, 3, 2);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(271, 27);
+            tbUsername.Size = new Size(238, 23);
             tbUsername.TabIndex = 1;
             // 
             // lUsername
@@ -366,7 +387,7 @@
             lUsername.AutoSize = true;
             lUsername.Location = new Point(3, 0);
             lUsername.Name = "lUsername";
-            lUsername.Size = new Size(110, 20);
+            lUsername.Size = new Size(89, 15);
             lUsername.TabIndex = 0;
             lUsername.Text = "Tên đăng nhập:";
             // 
@@ -377,10 +398,11 @@
             tpRole.Controls.Add(bBack2);
             tpRole.Controls.Add(gb);
             tpRole.Controls.Add(pRoleName);
-            tpRole.Location = new Point(4, 29);
+            tpRole.Location = new Point(4, 24);
+            tpRole.Margin = new Padding(3, 2, 3, 2);
             tpRole.Name = "tpRole";
-            tpRole.Padding = new Padding(3);
-            tpRole.Size = new Size(762, 368);
+            tpRole.Padding = new Padding(3, 2, 3, 2);
+            tpRole.Size = new Size(666, 273);
             tpRole.TabIndex = 1;
             tpRole.Text = "Vai trò";
             tpRole.UseVisualStyleBackColor = true;
@@ -389,17 +411,19 @@
             // 
             pPower2.Controls.Add(cbPower2);
             pPower2.Controls.Add(lPower2);
-            pPower2.Location = new Point(6, 46);
+            pPower2.Location = new Point(5, 34);
+            pPower2.Margin = new Padding(3, 2, 3, 2);
             pPower2.Name = "pPower2";
-            pPower2.Size = new Size(750, 34);
+            pPower2.Size = new Size(656, 26);
             pPower2.TabIndex = 13;
             // 
             // cbPower2
             // 
             cbPower2.AutoSize = true;
-            cbPower2.Location = new Point(341, 0);
+            cbPower2.Location = new Point(298, 0);
+            cbPower2.Margin = new Padding(3, 2, 3, 2);
             cbPower2.Name = "cbPower2";
-            cbPower2.Size = new Size(49, 24);
+            cbPower2.Size = new Size(41, 19);
             cbPower2.TabIndex = 1;
             cbPower2.Text = "Có";
             cbPower2.UseVisualStyleBackColor = true;
@@ -409,16 +433,17 @@
             lPower2.AutoSize = true;
             lPower2.Location = new Point(0, 0);
             lPower2.Name = "lPower2";
-            lPower2.Size = new Size(312, 20);
+            lPower2.Size = new Size(249, 15);
             lPower2.TabIndex = 0;
             lPower2.Text = "Được phép cấp quyền tương tự cho role khác:";
             // 
             // bCreate2
             // 
             bCreate2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            bCreate2.Location = new Point(252, 307);
+            bCreate2.Location = new Point(220, 230);
+            bCreate2.Margin = new Padding(3, 2, 3, 2);
             bCreate2.Name = "bCreate2";
-            bCreate2.Size = new Size(133, 58);
+            bCreate2.Size = new Size(116, 44);
             bCreate2.TabIndex = 12;
             bCreate2.Text = "Tạo mới";
             bCreate2.UseVisualStyleBackColor = true;
@@ -427,9 +452,10 @@
             // bBack2
             // 
             bBack2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            bBack2.Location = new Point(391, 307);
+            bBack2.Location = new Point(342, 230);
+            bBack2.Margin = new Padding(3, 2, 3, 2);
             bBack2.Name = "bBack2";
-            bBack2.Size = new Size(133, 58);
+            bBack2.Size = new Size(116, 44);
             bBack2.TabIndex = 11;
             bBack2.Text = "Quay lại";
             bBack2.UseVisualStyleBackColor = true;
@@ -440,9 +466,11 @@
             gb.Controls.Add(pDelete);
             gb.Controls.Add(pInsert);
             gb.Controls.Add(pSelect);
-            gb.Location = new Point(6, 86);
+            gb.Location = new Point(5, 64);
+            gb.Margin = new Padding(3, 2, 3, 2);
             gb.Name = "gb";
-            gb.Size = new Size(753, 215);
+            gb.Padding = new Padding(3, 2, 3, 2);
+            gb.Size = new Size(659, 161);
             gb.TabIndex = 3;
             gb.TabStop = false;
             gb.Text = "Phân quyền";
@@ -451,18 +479,20 @@
             // 
             pDelete.Controls.Add(tbDelete);
             pDelete.Controls.Add(lDelete);
-            pDelete.Location = new Point(6, 175);
+            pDelete.Location = new Point(5, 131);
+            pDelete.Margin = new Padding(3, 2, 3, 2);
             pDelete.Name = "pDelete";
-            pDelete.Size = new Size(741, 34);
+            pDelete.Size = new Size(648, 26);
             pDelete.TabIndex = 4;
             // 
             // tbDelete
             // 
-            tbDelete.Location = new Point(119, 3);
+            tbDelete.Location = new Point(104, 2);
+            tbDelete.Margin = new Padding(3, 2, 3, 2);
             tbDelete.Multiline = true;
             tbDelete.Name = "tbDelete";
             tbDelete.ScrollBars = ScrollBars.Vertical;
-            tbDelete.Size = new Size(619, 27);
+            tbDelete.Size = new Size(542, 21);
             tbDelete.TabIndex = 1;
             // 
             // lDelete
@@ -471,7 +501,7 @@
             lDelete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             lDelete.Location = new Point(3, 0);
             lDelete.Name = "lDelete";
-            lDelete.Size = new Size(72, 28);
+            lDelete.Size = new Size(57, 21);
             lDelete.TabIndex = 0;
             lDelete.Text = "Delete:";
             // 
@@ -479,18 +509,20 @@
             // 
             pInsert.Controls.Add(tbInsert);
             pInsert.Controls.Add(lInsert);
-            pInsert.Location = new Point(6, 100);
+            pInsert.Location = new Point(5, 75);
+            pInsert.Margin = new Padding(3, 2, 3, 2);
             pInsert.Name = "pInsert";
-            pInsert.Size = new Size(741, 34);
+            pInsert.Size = new Size(648, 26);
             pInsert.TabIndex = 3;
             // 
             // tbInsert
             // 
-            tbInsert.Location = new Point(119, 3);
+            tbInsert.Location = new Point(104, 2);
+            tbInsert.Margin = new Padding(3, 2, 3, 2);
             tbInsert.Multiline = true;
             tbInsert.Name = "tbInsert";
             tbInsert.ScrollBars = ScrollBars.Vertical;
-            tbInsert.Size = new Size(619, 27);
+            tbInsert.Size = new Size(542, 21);
             tbInsert.TabIndex = 1;
             // 
             // lInsert
@@ -499,7 +531,7 @@
             lInsert.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             lInsert.Location = new Point(3, 0);
             lInsert.Name = "lInsert";
-            lInsert.Size = new Size(64, 28);
+            lInsert.Size = new Size(52, 21);
             lInsert.TabIndex = 0;
             lInsert.Text = "Insert:";
             // 
@@ -507,18 +539,20 @@
             // 
             pSelect.Controls.Add(tbSelect);
             pSelect.Controls.Add(lSelect);
-            pSelect.Location = new Point(6, 26);
+            pSelect.Location = new Point(5, 20);
+            pSelect.Margin = new Padding(3, 2, 3, 2);
             pSelect.Name = "pSelect";
-            pSelect.Size = new Size(741, 34);
+            pSelect.Size = new Size(648, 26);
             pSelect.TabIndex = 2;
             // 
             // tbSelect
             // 
-            tbSelect.Location = new Point(119, 3);
+            tbSelect.Location = new Point(104, 2);
+            tbSelect.Margin = new Padding(3, 2, 3, 2);
             tbSelect.Multiline = true;
             tbSelect.Name = "tbSelect";
             tbSelect.ScrollBars = ScrollBars.Vertical;
-            tbSelect.Size = new Size(619, 27);
+            tbSelect.Size = new Size(542, 21);
             tbSelect.TabIndex = 1;
             // 
             // lSelect
@@ -527,7 +561,7 @@
             lSelect.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
             lSelect.Location = new Point(3, 0);
             lSelect.Name = "lSelect";
-            lSelect.Size = new Size(68, 28);
+            lSelect.Size = new Size(54, 21);
             lSelect.TabIndex = 0;
             lSelect.Text = "Select:";
             // 
@@ -535,16 +569,18 @@
             // 
             pRoleName.Controls.Add(textBox4);
             pRoleName.Controls.Add(lRoleName);
-            pRoleName.Location = new Point(6, 6);
+            pRoleName.Location = new Point(5, 4);
+            pRoleName.Margin = new Padding(3, 2, 3, 2);
             pRoleName.Name = "pRoleName";
-            pRoleName.Size = new Size(393, 34);
+            pRoleName.Size = new Size(344, 26);
             pRoleName.TabIndex = 1;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(119, 3);
+            textBox4.Location = new Point(104, 2);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(271, 27);
+            textBox4.Size = new Size(238, 23);
             textBox4.TabIndex = 1;
             // 
             // lRoleName
@@ -552,18 +588,19 @@
             lRoleName.AutoSize = true;
             lRoleName.Location = new Point(3, 0);
             lRoleName.Name = "lRoleName";
-            lRoleName.Size = new Size(81, 20);
+            lRoleName.Size = new Size(65, 15);
             lRoleName.TabIndex = 0;
             lRoleName.Text = "Tên vai trò:";
             // 
             // CreateForm
             // 
             AcceptButton = bCreate;
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = bBack;
-            ClientSize = new Size(800, 425);
+            ClientSize = new Size(700, 319);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CreateForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tạo mới";
@@ -609,7 +646,7 @@
         private TabPage tpUser;
         private TabPage tpRole;
         private Panel pPassword;
-        private TextBox textBox1;
+        private TextBox tbPassword;
         private Label lPassword;
         private Panel pUsername;
         private TextBox tbUsername;

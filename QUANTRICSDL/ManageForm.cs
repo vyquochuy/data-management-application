@@ -48,5 +48,12 @@ namespace QUANTRICSDL
             updateForm.ShowDialog();
             this.Show();
         }
+        private void bGrantPrivileges_Click(object sender, EventArgs e)
+        {
+            GrantPrivilegesForm grantForm = new GrantPrivilegesForm();
+            this.Hide();
+            grantForm.ShowDialog();
+            this.Show();
+        }
     }
 }
