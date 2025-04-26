@@ -1,8 +1,5 @@
 -- Kết nối với SYS
-
-
-
-CONNECT SYS/123@localhost:1521/ORCL AS SYSDBA;
+CONNECT SYS/123@localhost:1521/xe AS SYSDBA;
 
 -- Đóng PDB nếu đang mở
 BEGIN

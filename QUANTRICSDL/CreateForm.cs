@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,8 +42,26 @@ namespace QUANTRICSDL
 
         private void bCreate_Click(object sender, EventArgs e)
         {
-            //TODO: thực hiện hàm tạo mới ở đây và kiểm tra xem đối tượng được tạo có phù hợp không
-            MessageBox.Show("Tạo thành công!");
+            string username = tbUsername.Text.Trim(); // Giả sử có TextBox tbUsername
+            // string password = tbPassword.Text.Trim(); // Giả sử có TextBox tbPassword
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty("password"))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            try
+            {
+                string sql = $"CREATE USER {username} IDENTIFIED BY {"password"}";
+
+                DatabaseHelper.ExecuteNonQuery(sql);
+                MessageBox.Show("Tạo user thành công!");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi tạo user", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbRole_SelectedIndexChanged(object sender, EventArgs e)

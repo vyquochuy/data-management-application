@@ -28,37 +28,28 @@ namespace QUANTRICSDL
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            // Lấy giá trị tài khoản và mật khẩu từ các textbox
             string username = tbUserName.Text.Trim();
             string password = tbPassword.Text;
 
-            // Kiểm tra đầu vào
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu");
                 return;
             }
 
-            // Chuỗi kết nối Oracle DB
-            string connectionString = $"User Id={username};Password={password};Data Source = localhost:1521/QLCSDL";
-
+            DatabaseHelper.SetConnectionString(username, password);
 
             try
             {
-                using (OracleConnection conn = new OracleConnection(connectionString))
-                { 
-                    conn.Open(); // Kết nối vào Oracle DB
-
-                    // Nếu login thành công:
-                    
-                        // Mở form quản trị (Admin)
-                        MenuForm menuForm = new MenuForm();
-                        this.Hide();
-                        menuForm.ShowDialog();
-                        this.Show();
-                    
-
-                } }
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    MenuForm menuForm = new MenuForm();
+                    this.Hide();
+                    menuForm.ShowDialog();
+                    this.Show();
+                }
+            }
             catch (OracleException ex)
             {
                 string message = $"Đăng nhập thất bại!\n\n" +
