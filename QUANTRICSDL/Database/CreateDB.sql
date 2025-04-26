@@ -1,11 +1,11 @@
 -- Kết nối với SYS
-CONNECT SYS/123@localhost:1521/ORCL AS SYSDBA;
+--CONNECT SYS/123@localhost:1521/ORCL AS SYSDBA;
 
 CREATE PLUGGABLE DATABASE QLCSDL
 ADMIN USER admin IDENTIFIED BY 123
 ROLES = (DBA)
--- điều chỉnh cho đúng với máy
 FILE_NAME_CONVERT = ('pdbseed', 'QLCSDL');
+SELECT name, open_mode FROM v$pdbs;
 
 -- Mở PDB
 ALTER PLUGGABLE DATABASE QLCSDL OPEN;
@@ -21,7 +21,7 @@ GRANT CONNECT, RESOURCE, CREATE SESSION, CREATE TABLE TO school_user;
 GRANT UNLIMITED TABLESPACE TO school_user;
 
 -- Kết nối với user
-CONNECT school_user/123@localhost:1521/ORCL;
+CONNECT school_user/123@localhost:1521/QLCSDL;
 
 -- Xóa bảng con trước
 -- DROP TABLE ĐANGKY CASCADE CONSTRAINTS;
@@ -106,7 +106,7 @@ CREATE TABLE ĐANGKY (
 );
 
 
-CONNECT school_user/123@localhost:1521/ORCL;
+CONNECT school_user/123@localhost:1521/QLCSDL;
 -- Tắt tự động commit để có thể rollback nếu có lỗi
 SET AUTOCOMMIT OFF;
 
