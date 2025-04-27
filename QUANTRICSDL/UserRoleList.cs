@@ -27,7 +27,7 @@ namespace QUANTRICSDL
             userListView.View = View.Details;
 
             userListView.Columns.Add("Tên người dùng", 150);
-            userListView.Columns.Add("Đối tượng", 80);
+            userListView.Columns.Add("Trạng thái", 80);
             userListView.Columns.Add("Quyền", 200);
 
             try

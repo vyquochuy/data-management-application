@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnBack = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             userListView = new ListView();
             tabPage2 = new TabPage();
             roleListView = new ListView();
-            btnBack = new Button();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -49,6 +49,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 435);
             panel1.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(4, 5);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 1;
+            btnBack.Text = "Quay lại";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += Back_Click;
             // 
             // tabControl1
             // 
@@ -73,9 +83,9 @@
             // 
             // userListView
             // 
-            userListView.Location = new Point(0, 0);
+            userListView.Location = new Point(6, 6);
             userListView.Name = "userListView";
-            userListView.Size = new Size(766, 381);
+            userListView.Size = new Size(753, 327);
             userListView.TabIndex = 0;
             userListView.UseCompatibleStateImageBehavior = false;
             userListView.SelectedIndexChanged += userListView_SelectedIndexChanged;
@@ -86,7 +96,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(762, 381);
+            tabPage2.Size = new Size(765, 350);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Vai trò";
             tabPage2.UseVisualStyleBackColor = true;
@@ -99,16 +109,6 @@
             roleListView.TabIndex = 0;
             roleListView.UseCompatibleStateImageBehavior = false;
             roleListView.SelectedIndexChanged += roleListView_SelectedIndexChanged;
-            // 
-            // button1
-            // 
-            btnBack.Location = new Point(4, 5);
-            btnBack.Name = "Back";
-            btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 1;
-            btnBack.Text = "Quay lại";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += Back_Click;
             // 
             // UserRoleList
             // 
