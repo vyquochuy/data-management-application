@@ -35,10 +35,8 @@ namespace QUANTRICSDL
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            this.Hide();
-            menuForm.ShowDialog();
-            this.Show();
+            //MenuForm menuForm = new MenuForm();
+            this.Close();
         }
 
         private void bUpdate_Click(object sender, EventArgs e)

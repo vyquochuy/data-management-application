@@ -197,7 +197,7 @@
             lPower.Name = "lPower";
             lPower.Size = new Size(251, 15);
             lPower.TabIndex = 0;
-            lPower.Text = "Được phép cấp quyền tương tự cho user khác:";
+            lPower.Text = "Được phép cấp quyền";
             // 
             // pId
             // 
@@ -435,7 +435,7 @@
             lPower2.Name = "lPower2";
             lPower2.Size = new Size(249, 15);
             lPower2.TabIndex = 0;
-            lPower2.Text = "Được phép cấp quyền tương tự cho role khác:";
+            lPower2.Text = "Được phép cấp quyền";
             // 
             // bCreate2
             // 

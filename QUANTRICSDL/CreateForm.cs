@@ -20,18 +20,12 @@ namespace QUANTRICSDL
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            ManageForm manageForm = new ManageForm();
-            this.Hide();
-            manageForm.ShowDialog();
-            this.Show();
+            this.Close(); ;
         }
 
         private void bBack2_Click(object sender, EventArgs e)
         {
-            ManageForm manageForm = new ManageForm();
-            this.Hide();
-            manageForm.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void bCreate2_Click(object sender, EventArgs e)
