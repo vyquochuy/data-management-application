@@ -62,13 +62,15 @@ namespace QUANTRICSDL
             listView.Dock = DockStyle.Fill;
             listView.Columns.Clear();
 
-            listView.Columns.Add("Người dùng", 150);
+            listView.Columns.Add("Người dùng/vai trò", 150);
             listView.Columns.Add("Bảng (cột)", 120);
             listView.Columns.Add("Quyền", 120);
             listView.Columns.Add("Cấp quyền này cho người khác", 200);
 
             string createViewSql = $"SELECT GRANTEE, TABLE_NAME, PRIVILEGE, GRANTABLE " +
-                $"FROM DBA_TAB_PRIVS WHERE TABLE_NAME LIKE '%{tableName}%'";
+                $"FROM DBA_TAB_PRIVS " +
+                $"WHERE TABLE_NAME LIKE '%{tableName}%'" +
+                $"AND GRANTEE != 'ADMIN'";
 
 
 

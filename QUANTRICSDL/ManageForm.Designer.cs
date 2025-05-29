@@ -60,9 +60,9 @@
             bUpdate.Name = "bUpdate";
             bUpdate.Size = new Size(133, 46);
             bUpdate.TabIndex = 5;
-            bUpdate.Text = "Sửa";
+            bUpdate.Text = "Gán vai trò cho người dùng";
             bUpdate.UseVisualStyleBackColor = true;
-            bUpdate.Click += bUpdate_Click;
+            bUpdate.Click += bGrantRole_Click;
             // 
             // bBack
             // 

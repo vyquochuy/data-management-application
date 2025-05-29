@@ -31,13 +31,15 @@
             btnQuanLyUserRole = new Button();
             btnXemDanhSach = new Button();
             btnXemThongTinQuyen = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnQuanLyUserRole
             // 
-            btnQuanLyUserRole.Location = new Point(254, 102);
+            btnQuanLyUserRole.Location = new Point(216, 53);
+            btnQuanLyUserRole.Margin = new Padding(3, 2, 3, 2);
             btnQuanLyUserRole.Name = "btnQuanLyUserRole";
-            btnQuanLyUserRole.Size = new Size(300, 50);
+            btnQuanLyUserRole.Size = new Size(262, 38);
             btnQuanLyUserRole.TabIndex = 0;
             btnQuanLyUserRole.Text = "1. Quản lý User / Role";
             btnQuanLyUserRole.UseWaitCursor = true;
@@ -45,9 +47,10 @@
             // 
             // btnXemDanhSach
             // 
-            btnXemDanhSach.Location = new Point(254, 203);
+            btnXemDanhSach.Location = new Point(216, 129);
+            btnXemDanhSach.Margin = new Padding(3, 2, 3, 2);
             btnXemDanhSach.Name = "btnXemDanhSach";
-            btnXemDanhSach.Size = new Size(300, 50);
+            btnXemDanhSach.Size = new Size(262, 38);
             btnXemDanhSach.TabIndex = 1;
             btnXemDanhSach.Text = "2. Xem danh sách User / Role";
             btnXemDanhSach.UseWaitCursor = true;
@@ -55,22 +58,35 @@
             // 
             // btnXemThongTinQuyen
             // 
-            btnXemThongTinQuyen.Location = new Point(254, 300);
+            btnXemThongTinQuyen.Location = new Point(216, 202);
+            btnXemThongTinQuyen.Margin = new Padding(3, 2, 3, 2);
             btnXemThongTinQuyen.Name = "btnXemThongTinQuyen";
-            btnXemThongTinQuyen.Size = new Size(300, 50);
+            btnXemThongTinQuyen.Size = new Size(262, 38);
             btnXemThongTinQuyen.TabIndex = 4;
             btnXemThongTinQuyen.Text = "3. Xem quyền theo đối tượng";
             btnXemThongTinQuyen.UseWaitCursor = true;
             btnXemThongTinQuyen.Click += btnXemThongTinQuyen_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(216, 275);
+            button1.Name = "btnUserRoleDetail";
+            button1.Size = new Size(262, 38);
+            button1.TabIndex = 5;
+            button1.Text = "Xem chi tiết người dùng/vai trò";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnUserRoleDetail;
+            // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(792, 420);
+            ClientSize = new Size(693, 388);
+            Controls.Add(button1);
             Controls.Add(btnQuanLyUserRole);
             Controls.Add(btnXemDanhSach);
             Controls.Add(btnXemThongTinQuyen);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MenuForm";
             Text = "QUẢN TRỊ ORACLE";
             UseWaitCursor = true;
@@ -79,5 +95,7 @@
 
 
         #endregion
+
+        private Button button1;
     }
 }

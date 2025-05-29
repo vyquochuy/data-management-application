@@ -32,5 +32,13 @@
             objectPrivilegesForm.ShowDialog();
             this.Show();
         }
+
+        private void btnUserRoleDetail(object sender, EventArgs e)
+        {
+            UserRoleDetail userRoleDetail = new UserRoleDetail();
+            this.Hide();
+            userRoleDetail.ShowDialog();
+            this.Show();
+        }
     }
 }

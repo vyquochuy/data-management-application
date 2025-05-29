@@ -39,11 +39,11 @@ namespace QUANTRICSDL
             this.Close();
         }
 
-        private void bUpdate_Click(object sender, EventArgs e)
+        private void bGrantRole_Click(object sender, EventArgs e)
         {
-            UpdateForm updateForm = new UpdateForm();
+            GrantRoleForm grantRoleForm = new GrantRoleForm();
             this.Hide();
-            updateForm.ShowDialog();
+            grantRoleForm.ShowDialog();
             this.Show();
         }
         private void bGrantPrivileges_Click(object sender, EventArgs e)

@@ -22,16 +22,24 @@ namespace QUANTRICSDL
 
         private void LoadUsersAndRoles()
         {
+
             cbUserRole.Items.Clear();
             try
             {
-                //string sql = "SELECT username FROM dba_users UNION SELECT role FROM dba_roles Where common = 'NO'";
-                string sql = "SELECT username FROM all_users Where common = 'NO'";
-
-                DataTable dt = DatabaseHelper.ExecuteQuery(sql);
-                foreach (DataRow row in dt.Rows)
+                // Load user
+                string userSql = "SELECT username FROM all_users WHERE common = 'NO'";
+                DataTable userDt = DatabaseHelper.ExecuteQuery(userSql);
+                foreach (DataRow row in userDt.Rows)
                 {
                     cbUserRole.Items.Add(row["username"].ToString());
+                }
+
+                // Load role
+                string roleSql = "SELECT role FROM dba_roles WHERE common = 'NO'";
+                DataTable roleDt = DatabaseHelper.ExecuteQuery(roleSql);
+                foreach (DataRow row in roleDt.Rows)
+                {
+                    cbUserRole.Items.Add(row["role"].ToString());
                 }
             }
             catch (OracleException ex)
