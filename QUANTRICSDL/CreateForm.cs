@@ -30,8 +30,23 @@ namespace QUANTRICSDL
 
         private void bCreate2_Click(object sender, EventArgs e)
         {
-            //TODO: thực hiện hàm tạo mới ở đây và kiểm tra xem đối tượng được tạo có phù hợp không
-            MessageBox.Show("Tạo thành công!");
+            string roleName = textBox4.Text.Trim();
+            if (!System.Text.RegularExpressions.Regex.IsMatch(roleName, @"^[A-Z0-9_]+$"))
+            {
+                MessageBox.Show("Tên vai trò không hợp lệ. Chỉ được dùng chữ cái, số và dấu gạch dưới.");
+                return;
+            }
+
+            try
+            {
+                string sql = $"CREATE ROLE {roleName}";
+                DatabaseHelper.ExecuteNonQuery(sql);
+                MessageBox.Show($"Tạo vai trò '{roleName}' thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tạo role: " + ex.Message);
+            }
         }
 
         private void bCreate_Click(object sender, EventArgs e)

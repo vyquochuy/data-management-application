@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 namespace QUANTRICSDL
 {
     public partial class GrantPrivilegesForm : Form
@@ -24,7 +25,9 @@ namespace QUANTRICSDL
             cbUserRole.Items.Clear();
             try
             {
-                string sql = "SELECT username FROM dba_users UNION SELECT role FROM dba_roles Where common = 'NO'";
+                //string sql = "SELECT username FROM dba_users UNION SELECT role FROM dba_roles Where common = 'NO'";
+                string sql = "SELECT username FROM all_users Where common = 'NO'";
+
                 DataTable dt = DatabaseHelper.ExecuteQuery(sql);
                 foreach (DataRow row in dt.Rows)
                 {
@@ -46,7 +49,9 @@ namespace QUANTRICSDL
         {
             cbObject.Items.Clear();
             string objectType = cbObjectType.SelectedItem.ToString();
-            string sql = $"SELECT object_name FROM dba_objects WHERE object_type = '{objectType}'";
+            //string sql = $"SELECT object_name FROM dba_objects WHERE object_type = '{objectType}'";
+            string sql = $"SELECT object_name FROM dba_objects WHERE object_type = '{objectType}' AND owner = 'SCHOOL_USER'";
+
             try
             {
                 DataTable dt = DatabaseHelper.ExecuteQuery(sql);
@@ -95,24 +100,54 @@ namespace QUANTRICSDL
 
             try
             {
-                foreach (string privilege in clbPrivileges.CheckedItems.Cast<string>())
+                string privilege = clbPrivileges.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(privilege))
                 {
-                    string sql = "";
+                    MessageBox.Show("Vui lòng chọn một quyền.", "Thông báo");
+                    return;
+                }
 
-                    if (clbColumns.CheckedItems.Count > 0 && (privilege == "SELECT" || privilege == "UPDATE"))
-                    {
-                        string columns = string.Join(",", clbColumns.CheckedItems.Cast<string>());
-                        sql = $"GRANT {privilege} ({columns}) ON {objectName} TO {userOrRole}";
-                    }
-                    else
-                    {
-                        sql = $"GRANT {privilege} ON {objectName} TO {userOrRole}";
-                    }
+                //string objectName = cbObject.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(objectName))
+                {
+                    MessageBox.Show("Vui lòng chọn đối tượng.", "Thông báo");
+                    return;
+                }
 
+                string sql = "";
+
+                // Nếu có chọn cột và quyền là SELECT hoặc UPDATE
+                if (clbColumns.CheckedItems.Count > 0 && (privilege == "SELECT" || privilege == "UPDATE"))
+                {
+                    foreach (string column in clbColumns.CheckedItems)
+                    {
+                        // Tạo tên view theo yêu cầu
+                        string viewName = $"v_{objectName}_{column}";
+
+                        // Tạo view chỉ chứa 1 cột
+                        string createViewSql = $"CREATE OR REPLACE VIEW {viewName} AS SELECT {column} FROM SCHOOL_USER.{objectName}";
+                        MessageBox.Show(createViewSql, "Câu lệnh SQL đang chạy");
+
+                        DatabaseHelper.ExecuteNonQuery(createViewSql);
+
+                        // Cấp quyền trên view
+                        string grantSql = $"GRANT {privilege} ON {viewName} TO {userOrRole}";
+                        if (withGrantOption) grantSql += " WITH GRANT OPTION";
+
+                        MessageBox.Show(grantSql, "Câu lệnh SQL đang chạy");
+                        DatabaseHelper.ExecuteNonQuery(grantSql);
+                    }
+                }
+                else
+                {
+                    // Cấp quyền trực tiếp trên bảng
+                    sql = $"GRANT {privilege} ON SCHOOL_USER.{objectName} TO {userOrRole}";
                     if (withGrantOption) sql += " WITH GRANT OPTION";
 
+                    MessageBox.Show(sql, "Câu lệnh SQL đang chạy");
                     DatabaseHelper.ExecuteNonQuery(sql);
                 }
+
 
                 MessageBox.Show("Cấp quyền thành công!");
             }

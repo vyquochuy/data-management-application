@@ -19,7 +19,7 @@
             this.cbObjectType = new System.Windows.Forms.ComboBox();
             this.cbObject = new System.Windows.Forms.ComboBox();
             this.clbColumns = new System.Windows.Forms.CheckedListBox();
-            this.clbPrivileges = new System.Windows.Forms.CheckedListBox();
+            this.clbPrivileges = new System.Windows.Forms.ComboBox(); // đổi tử CheckedListBox -> ComboBox (cho phép chọn 1 quyền)
             this.chkWithGrantOption = new System.Windows.Forms.CheckBox();
             this.bGrant = new System.Windows.Forms.Button();
             this.labelUserRole = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@
             // 
             // clbPrivileges
             // 
+            // clbPrivileges (đã chuyển sang ComboBox)
+            this.clbPrivileges.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clbPrivileges.FormattingEnabled = true;
             this.clbPrivileges.Items.AddRange(new object[] {
             "SELECT",
@@ -148,7 +150,7 @@
         private System.Windows.Forms.ComboBox cbObjectType;
         private System.Windows.Forms.ComboBox cbObject;
         private System.Windows.Forms.CheckedListBox clbColumns;
-        private System.Windows.Forms.CheckedListBox clbPrivileges;
+        private System.Windows.Forms.ComboBox clbPrivileges;
         private System.Windows.Forms.CheckBox chkWithGrantOption;
         private System.Windows.Forms.Button bGrant;
         private System.Windows.Forms.Label labelUserRole;
