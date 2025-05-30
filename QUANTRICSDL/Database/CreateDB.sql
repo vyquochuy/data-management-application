@@ -107,6 +107,12 @@ CREATE TABLE DANGKY (
     CONSTRAINT fk_dk_mm FOREIGN KEY (MAMM) REFERENCES MOMON(MAMM)
 );
 
+-- Tạo bảng THONGBAO
+CREATE TABLE THONGBAO (
+    ID NUMBER PRIMARY KEY,
+    NOIDUNG VARCHAR2(1000),
+    LABEL_COLUMN NUMBER
+);
 
 CONNECT school_user/123@localhost:1521/QLCSDL;
 -- Tắt tự động commit để có thể rollback nếu có lỗi
