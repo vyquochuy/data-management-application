@@ -59,6 +59,26 @@ namespace QUANTRICSDL
 
                 listViewPrivileges.Items.Add(item);
             }
+
+            sql = $@"
+                SELECT TABLE_NAME, COLUMN_NAME, PRIVILEGE, GRANTABLE
+                FROM DBA_COL_PRIVS 
+                WHERE GRANTEE = '{grantee}'";
+            dt = DatabaseHelper.ExecuteQuery(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                string tableName = row["TABLE_NAME"].ToString() + "_" + row["COLUMN_NAME"].ToString();
+                string privilege = row["PRIVILEGE"].ToString();
+                string grantable = row["GRANTABLE"].ToString();
+                string type = "TABLE";
+
+                ListViewItem item = new ListViewItem(tableName);
+                item.SubItems.Add(privilege);
+                item.SubItems.Add(grantable);
+                item.SubItems.Add(type);
+
+                listViewPrivileges.Items.Add(item);
+            }
         }
     }
 }

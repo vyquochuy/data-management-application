@@ -5,8 +5,6 @@
         public MenuForm()
         {
             InitializeComponent();
-            FormHelper.SetStandardSize(this);
-            // TODO: kết nối đb
         }
 
         private void btnQuanLyUserRole_Click(object sender, EventArgs e)

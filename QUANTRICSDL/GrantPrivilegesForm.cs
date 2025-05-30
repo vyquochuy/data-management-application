@@ -122,10 +122,10 @@ namespace QUANTRICSDL
                     return;
                 }
 
-                string sql = "";
+                string sql;
 
-                // Nếu có chọn cột và quyền là SELECT hoặc UPDATE
-                if (clbColumns.CheckedItems.Count > 0 && (privilege == "SELECT" || privilege == "UPDATE"))
+                // Nếu có chọn cột và quyền là SELECT hoặc
+                if (clbColumns.CheckedItems.Count > 0 && (privilege == "SELECT"))
                 {
                     foreach (string column in clbColumns.CheckedItems)
                     {
@@ -144,6 +144,17 @@ namespace QUANTRICSDL
 
                         MessageBox.Show(grantSql, "Câu lệnh SQL đang chạy");
                         DatabaseHelper.ExecuteNonQuery(grantSql);
+                    }
+                }
+                else if (clbColumns.CheckedItems.Count > 0 && (privilege == "UPDATE"))
+                {
+                    foreach (string column in clbColumns.CheckedItems)
+                    {
+                        sql = $"GRANT UPDATE ({column}) ON SCHOOL_USER.{objectName} TO {userOrRole}";
+                        if (withGrantOption) sql += " WITH GRANT OPTION";
+
+                        MessageBox.Show(sql, "Câu lệnh SQL đang chạy");
+                        DatabaseHelper.ExecuteNonQuery(sql);
                     }
                 }
                 else

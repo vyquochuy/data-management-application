@@ -67,26 +67,44 @@ namespace QUANTRICSDL
             listView.Columns.Add("Quyền", 120);
             listView.Columns.Add("Cấp quyền này cho người khác", 200);
 
-            string createViewSql = $"SELECT GRANTEE, TABLE_NAME, PRIVILEGE, GRANTABLE " +
+            List<List<string>> data = new List<List<string>>();
+            
+            // LOAD QUYỀN THEO ĐỐI TƯỢNG BẢNG
+            string sqlLoadTable = $"SELECT GRANTEE, TABLE_NAME, PRIVILEGE, GRANTABLE " +
                 $"FROM DBA_TAB_PRIVS " +
                 $"WHERE TABLE_NAME LIKE '%{tableName}%'" +
                 $"AND GRANTEE != 'ADMIN'";
 
+            DataTable dt = DatabaseHelper.ExecuteQuery(sqlLoadTable);
 
-
-            DataTable dt = DatabaseHelper.ExecuteQuery(createViewSql);
-
-            List<List<string>> data = new List<List<string>>();
             foreach (DataRow row in dt.Rows)
             {
-                string userName = row[0].ToString();
+                string grantee = row[0].ToString();
                 string tableNameInData = row[1].ToString();
                 string privilege = row[2].ToString();
                 string grantable = row[3].ToString();
 
-                data.Add(new List<string> { userName, tableNameInData, privilege, grantable });
+                data.Add(new List<string> { grantee, tableNameInData, privilege, grantable });
             }
 
+            // LOAD QUYỀN THEO CỘT
+            string sqlLoadColumn = $"SELECT GRANTEE, TABLE_NAME, COLUMN_NAME, PRIVILEGE, GRANTABLE " +
+                $"FROM DBA_COL_PRIVS " +
+                $"WHERE TABLE_NAME LIKE '%{tableName}%'" +
+                $"AND GRANTEE != 'ADMIN'";
+            dt = DatabaseHelper.ExecuteQuery(sqlLoadColumn);
+            foreach (DataRow row in dt.Rows)
+            {
+                string grantee = row[0].ToString();
+                string tableNameInData = row[1].ToString() + "_" + row[2].ToString();
+                string privilege = row[3].ToString();
+                string grantable = row[4].ToString();
+
+                data.Add(new List<string> { grantee, tableNameInData, privilege, grantable });
+            }
+
+
+            // LOAD DỮ LIỆU TỪ BẢNG GHI LÊN LISTVIEW
             foreach (var row in data)
             {
                 ListViewItem item = new ListViewItem(row[0]);

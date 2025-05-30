@@ -73,7 +73,7 @@
             button1.Name = "btnUserRoleDetail";
             button1.Size = new Size(262, 38);
             button1.TabIndex = 5;
-            button1.Text = "Xem chi tiết người dùng/vai trò";
+            button1.Text = "4. Xem chi tiết người dùng/vai trò";
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnUserRoleDetail;
             // 
