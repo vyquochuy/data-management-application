@@ -63,11 +63,11 @@
             btnXemThongTinQuyen.Name = "btnXemThongTinQuyen";
             btnXemThongTinQuyen.Size = new Size(262, 38);
             btnXemThongTinQuyen.TabIndex = 4;
-            btnXemThongTinQuyen.Text = "3. Xem quyền theo đối tượng";
+            btnXemThongTinQuyen.Text = "3. Xem quyền theo bảng";
             btnXemThongTinQuyen.UseWaitCursor = true;
             btnXemThongTinQuyen.Click += btnXemThongTinQuyen_Click;
             // 
-            // button1
+            // bRevoke
             // 
             button1.Location = new Point(216, 275);
             button1.Name = "btnUserRoleDetail";

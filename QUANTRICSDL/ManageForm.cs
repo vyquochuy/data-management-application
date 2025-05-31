@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,6 +52,14 @@ namespace QUANTRICSDL
             GrantPrivilegesForm grantForm = new GrantPrivilegesForm();
             this.Hide();
             grantForm.ShowDialog();
+            this.Show();
+        }
+
+        private void bRevoke_Click(object sender, EventArgs e)
+        {
+            RevokePrivilegesForm re = new RevokePrivilegesForm();
+            this.Hide();
+            re.ShowDialog();
             this.Show();
         }
     }
