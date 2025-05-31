@@ -80,5 +80,10 @@ namespace QUANTRICSDL
                 listViewPrivileges.Items.Add(item);
             }
         }
+
+        private void listViewPrivileges_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

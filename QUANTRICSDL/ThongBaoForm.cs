@@ -259,9 +259,6 @@ namespace QUANTRICSDL
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MenuForm menu = new MenuForm();
-            menu.ShowDialog();
             this.Close();
         }
 
