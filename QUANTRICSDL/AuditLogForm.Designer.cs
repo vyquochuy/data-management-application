@@ -28,12 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AuditLogForm";
+            cbUser = new ComboBox();
+            bSeen = new Button();
+            listViewLogInform = new ListView();
+            bBack = new Button();
+            SuspendLayout();
+            // 
+            // cbUser
+            // 
+            cbUser.FormattingEnabled = true;
+            cbUser.Location = new Point(12, 12);
+            cbUser.Name = "cbUser";
+            cbUser.Size = new Size(237, 28);
+            cbUser.TabIndex = 0;
+            cbUser.SelectedIndexChanged += cbUser_SelectedIndexChanged;
+            // 
+            // bSeen
+            // 
+            bSeen.Location = new Point(255, 12);
+            bSeen.Name = "bSeen";
+            bSeen.Size = new Size(94, 29);
+            bSeen.TabIndex = 1;
+            bSeen.Text = "Tra Log";
+            bSeen.UseVisualStyleBackColor = true;
+            bSeen.Click += bSeen_Click;
+            // 
+            // listViewLogInform
+            // 
+            listViewLogInform.Location = new Point(12, 46);
+            listViewLogInform.Name = "listViewLogInform";
+            listViewLogInform.Size = new Size(776, 392);
+            listViewLogInform.TabIndex = 2;
+            listViewLogInform.UseCompatibleStateImageBehavior = false;
+            listViewLogInform.SelectedIndexChanged += listViewLogInform_SelectedIndexChanged;
+            // 
+            // bBack
+            // 
+            bBack.Location = new Point(355, 12);
+            bBack.Name = "bBack";
+            bBack.Size = new Size(94, 29);
+            bBack.TabIndex = 3;
+            bBack.Text = "Quay lại";
+            bBack.UseVisualStyleBackColor = true;
+            bBack.Click += bBack_Click;
+            // 
+            // AuditLogForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(bBack);
+            Controls.Add(listViewLogInform);
+            Controls.Add(bSeen);
+            Controls.Add(cbUser);
+            Name = "AuditLogForm";
+            Text = "AuditLogForm";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ComboBox cbUser;
+        private Button bSeen;
+        private ListView listViewLogInform;
+        private Button bBack;
     }
 }

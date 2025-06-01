@@ -38,5 +38,13 @@
             userRoleDetail.ShowDialog();
             this.Show();
         }
+
+        private void bAuditLog_Click(object sender, EventArgs e)
+        {
+            AuditLogForm auditLogForm = new AuditLogForm();
+            this.Hide();
+            auditLogForm.ShowDialog();
+            this.Show();
+        }
     }
 }
