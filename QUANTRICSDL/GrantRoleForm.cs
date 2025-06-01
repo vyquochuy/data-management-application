@@ -64,5 +64,10 @@ namespace QUANTRICSDL
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
