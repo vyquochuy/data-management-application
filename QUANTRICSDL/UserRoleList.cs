@@ -16,7 +16,7 @@ namespace QUANTRICSDL
         public UserRoleList()
         {
             InitializeComponent();
-            FormHelper.SetStandardSize(this);
+            //FormHelper.SetStandardSize(this);
             LoadUsers();
             LoadRoles();
         }

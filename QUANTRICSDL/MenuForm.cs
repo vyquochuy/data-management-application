@@ -46,5 +46,20 @@
             auditLogForm.ShowDialog();
             this.Show();
         }
+        private void btnGuiThongBao_Click(object sender, EventArgs e)
+        {
+            ThongBaoForm thongBaoForm = new ThongBaoForm();
+            this.Hide();
+            thongBaoForm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnXemThongBao_Click(object sender, EventArgs e)
+        {
+            ThongBaoListForm listForm = new ThongBaoListForm();
+            this.Hide();
+            listForm.ShowDialog();
+            this.Show();
+        }
     }
 }

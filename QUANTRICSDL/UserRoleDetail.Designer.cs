@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbUserOrRole = new System.Windows.Forms.ComboBox();
-            this.btnViewPrivileges = new System.Windows.Forms.Button();
-            this.listViewPrivileges = new System.Windows.Forms.ListView();
-            this.columnTableName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnPrivilege = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnGrantable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SuspendLayout();
+            cbUserOrRole = new ComboBox();
+            btnViewPrivileges = new Button();
+            listViewPrivileges = new ListView();
+            columnTableName = new ColumnHeader();
+            columnPrivilege = new ColumnHeader();
+            columnGrantable = new ColumnHeader();
+            columnType = new ColumnHeader();
+            SuspendLayout();
             // 
             // cbUserOrRole
             // 
-            this.cbUserOrRole.FormattingEnabled = true;
-            this.cbUserOrRole.Location = new System.Drawing.Point(20, 20);
-            this.cbUserOrRole.Name = "cbUserOrRole";
-            this.cbUserOrRole.Size = new System.Drawing.Size(300, 24);
-            this.cbUserOrRole.TabIndex = 0;
+            cbUserOrRole.FormattingEnabled = true;
+            cbUserOrRole.Location = new Point(20, 25);
+            cbUserOrRole.Margin = new Padding(3, 4, 3, 4);
+            cbUserOrRole.Name = "cbUserOrRole";
+            cbUserOrRole.Size = new Size(300, 28);
+            cbUserOrRole.TabIndex = 0;
             // 
             // btnViewPrivileges
             // 
-            this.btnViewPrivileges.Location = new System.Drawing.Point(340, 20);
-            this.btnViewPrivileges.Name = "btnViewPrivileges";
-            this.btnViewPrivileges.Size = new System.Drawing.Size(100, 24);
-            this.btnViewPrivileges.TabIndex = 1;
-            this.btnViewPrivileges.Text = "Xem quyền";
-            this.btnViewPrivileges.UseVisualStyleBackColor = true;
-            this.btnViewPrivileges.Click += new System.EventHandler(this.btnViewPrivileges_Click);
+            btnViewPrivileges.Location = new Point(340, 25);
+            btnViewPrivileges.Margin = new Padding(3, 4, 3, 4);
+            btnViewPrivileges.Name = "btnViewPrivileges";
+            btnViewPrivileges.Size = new Size(100, 30);
+            btnViewPrivileges.TabIndex = 1;
+            btnViewPrivileges.Text = "Xem quyền";
+            btnViewPrivileges.UseVisualStyleBackColor = true;
+            btnViewPrivileges.Click += btnViewPrivileges_Click;
             // 
             // listViewPrivileges
             // 
-            this.listViewPrivileges.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnTableName,
-            this.columnPrivilege,
-            this.columnGrantable,
-            this.columnType});
-            this.listViewPrivileges.FullRowSelect = true;
-            this.listViewPrivileges.GridLines = true;
-            this.listViewPrivileges.HideSelection = false;
-            this.listViewPrivileges.Location = new System.Drawing.Point(20, 60);
-            this.listViewPrivileges.Name = "listViewPrivileges";
-            this.listViewPrivileges.Size = new System.Drawing.Size(600, 300);
-            this.listViewPrivileges.TabIndex = 2;
-            this.listViewPrivileges.UseCompatibleStateImageBehavior = false;
-            this.listViewPrivileges.View = System.Windows.Forms.View.Details;
+            listViewPrivileges.Columns.AddRange(new ColumnHeader[] { columnTableName, columnPrivilege, columnGrantable, columnType });
+            listViewPrivileges.FullRowSelect = true;
+            listViewPrivileges.GridLines = true;
+            listViewPrivileges.Location = new Point(20, 75);
+            listViewPrivileges.Margin = new Padding(3, 4, 3, 4);
+            listViewPrivileges.Name = "listViewPrivileges";
+            listViewPrivileges.Size = new Size(600, 374);
+            listViewPrivileges.TabIndex = 2;
+            listViewPrivileges.UseCompatibleStateImageBehavior = false;
+            listViewPrivileges.View = View.Details;
+            listViewPrivileges.SelectedIndexChanged += listViewPrivileges_SelectedIndexChanged;
             // 
             // columnTableName
             // 
-            this.columnTableName.Text = "Tên bảng";
-            this.columnTableName.Width = 150;
+            columnTableName.Text = "Tên bảng";
+            columnTableName.Width = 150;
             // 
             // columnPrivilege
             // 
-            this.columnPrivilege.Text = "Tên quyền";
-            this.columnPrivilege.Width = 150;
+            columnPrivilege.Text = "Tên quyền";
+            columnPrivilege.Width = 150;
             // 
             // columnGrantable
             // 
-            this.columnGrantable.Text = "Được cấp tiếp?";
-            this.columnGrantable.Width = 120;
+            columnGrantable.Text = "Được cấp tiếp?";
+            columnGrantable.Width = 120;
             // 
             // columnType
             // 
-            this.columnType.Text = "Loại quyền";
-            this.columnType.Width = 150;
+            columnType.Text = "Loại quyền";
+            columnType.Width = 150;
             // 
             // UserRoleDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 400);
-            this.Controls.Add(this.listViewPrivileges);
-            this.Controls.Add(this.btnViewPrivileges);
-            this.Controls.Add(this.cbUserOrRole);
-            this.Name = "UserRoleDetail";
-            this.Text = "Chi tiết quyền của User/Role";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(650, 500);
+            Controls.Add(listViewPrivileges);
+            Controls.Add(btnViewPrivileges);
+            Controls.Add(cbUserOrRole);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "UserRoleDetail";
+            Text = "Chi tiết quyền của User/Role";
+            ResumeLayout(false);
         }
 
         #endregion

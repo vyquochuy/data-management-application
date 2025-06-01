@@ -15,7 +15,7 @@ namespace QUANTRICSDL
         public ObjectPrivilegesForm()
         {
             InitializeComponent();
-            FormHelper.SetStandardSize(this);
+            //FormHelper.SetStandardSize(this);
 
             // Load danh sách bảng trước
             LoadTableList();

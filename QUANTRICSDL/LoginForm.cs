@@ -44,11 +44,22 @@ namespace QUANTRICSDL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    MenuForm menuForm = new MenuForm();
-                    this.Hide();
-                    menuForm.ShowDialog();
-                    this.Show();
-                }
+                    if (username == "ADMIN" || username == "admin")
+                    {
+                        AutoGrant.updateNhanVien();
+                        MenuForm menuForm = new MenuForm();
+                        this.Hide();
+                        menuForm.ShowDialog();
+                        this.Show();
+                    }
+                    else 
+                    {
+                        UserMenuForm menuForm = new UserMenuForm();
+                        this.Hide();
+                        menuForm.ShowDialog();
+                        this.Show();
+                    }
+}
             }
             catch (OracleException ex)
             {

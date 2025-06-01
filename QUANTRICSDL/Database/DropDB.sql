@@ -6,11 +6,11 @@ BEGIN
     EXECUTE IMMEDIATE 'ALTER PLUGGABLE DATABASE QLCSDL CLOSE IMMEDIATE';
 EXCEPTION
     WHEN OTHERS THEN
-        IF SQLCODE != -65011 THEN -- ORA-65011: Pluggable database VPD does not exist.
+        IF SQLCODE NOT IN (-65011, -65257) THEN  -- 65257: cannot close an already closed PDB
+            DBMS_OUTPUT.PUT_LINE('Error when closing PDB: ' || SQLERRM);
             RAISE;
         END IF;
 END;
-/
 
 -- Xóa PDB nếu tồn tại
 BEGIN
@@ -18,6 +18,7 @@ BEGIN
 EXCEPTION
     WHEN OTHERS THEN
         IF SQLCODE != -65011 THEN
+            DBMS_OUTPUT.PUT_LINE('Error when dropping PDB: ' || SQLERRM);
             RAISE;
         END IF;
 END;

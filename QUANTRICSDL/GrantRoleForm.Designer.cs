@@ -17,61 +17,71 @@
 
         private void InitializeComponent()
         {
-            this.cbUser = new System.Windows.Forms.ComboBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnGrantRole = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            cbUser = new ComboBox();
+            cbRole = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            btnGrantRole = new Button();
+            SuspendLayout();
             // 
             // cbUser
             // 
-            this.cbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUser.FormattingEnabled = true;
-            this.cbUser.Location = new System.Drawing.Point(130, 30);
-            this.cbUser.Name = "cbUser";
-            this.cbUser.Size = new System.Drawing.Size(200, 24);
+            cbUser.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbUser.FormattingEnabled = true;
+            cbUser.Location = new Point(130, 30);
+            cbUser.Name = "cbUser";
+            cbUser.Size = new Size(200, 28);
+            cbUser.TabIndex = 0;
+            cbUser.SelectedIndexChanged += cbUser_SelectedIndexChanged;
             // 
             // cbRole
             // 
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(130, 70);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(200, 24);
+            cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRole.FormattingEnabled = true;
+            cbRole.Location = new Point(130, 70);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(200, 28);
+            cbRole.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Text = "Chọn User:";
-            this.label1.AutoSize = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(30, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Chọn User:";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(30, 70);
-            this.label2.Text = "Chọn Role:";
-            this.label2.AutoSize = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(30, 70);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Chọn Role:";
             // 
             // btnGrantRole
             // 
-            this.btnGrantRole.Location = new System.Drawing.Point(130, 110);
-            this.btnGrantRole.Name = "btnGrantRole";
-            this.btnGrantRole.Size = new System.Drawing.Size(200, 30);
-            this.btnGrantRole.Text = "Gán Role cho User";
-            this.btnGrantRole.Click += new System.EventHandler(this.btnGrantRole_Click);
+            btnGrantRole.Location = new Point(130, 110);
+            btnGrantRole.Name = "btnGrantRole";
+            btnGrantRole.Size = new Size(200, 30);
+            btnGrantRole.TabIndex = 4;
+            btnGrantRole.Text = "Gán Role cho User";
+            btnGrantRole.Click += btnGrantRole_Click;
             // 
             // GrantRoleForm
             // 
-            this.ClientSize = new System.Drawing.Size(380, 170);
-            this.Controls.Add(this.cbUser);
-            this.Controls.Add(this.cbRole);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnGrantRole);
-            this.Name = "GrantRoleForm";
-            this.Text = "Gán Role cho User";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(380, 170);
+            Controls.Add(cbUser);
+            Controls.Add(cbRole);
+            Controls.Add(label1);
+            Controls.Add(label2);
+            Controls.Add(btnGrantRole);
+            Name = "GrantRoleForm";
+            Text = "Gán Role cho User";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

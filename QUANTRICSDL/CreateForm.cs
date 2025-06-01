@@ -65,7 +65,11 @@ namespace QUANTRICSDL
                 string sql = $"CREATE USER {username} IDENTIFIED BY {password}";
 
                 DatabaseHelper.ExecuteNonQuery(sql);
+
+                sql = $"GRANT CONNECT TO {username}";
+                DatabaseHelper.ExecuteNonQuery(sql);
                 MessageBox.Show("Tạo user thành công!");
+                AutoGrant.updateNhanVien();
             }
             catch (OracleException ex)
             {

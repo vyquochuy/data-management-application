@@ -20,6 +20,7 @@ CREATE USER school_user IDENTIFIED BY 123;
 GRANT CONNECT, RESOURCE, CREATE SESSION, CREATE TABLE TO school_user;
 GRANT UNLIMITED TABLESPACE TO school_user;
 GRANT CREATE VIEW TO school_user;
+GRANT CREATE ROLE TO school_user;
 
 -- Kết nối với user
 CONNECT school_user/123@localhost:1521/QLCSDL;
@@ -107,6 +108,11 @@ CREATE TABLE DANGKY (
     CONSTRAINT fk_dk_mm FOREIGN KEY (MAMM) REFERENCES MOMON(MAMM)
 );
 
+-- Tạo bảng THONGBAO
+CREATE TABLE THONGBAO (
+    ID NUMBER PRIMARY KEY,
+    NOIDUNG VARCHAR2(1000)
+);
 
 CONNECT school_user/123@localhost:1521/QLCSDL;
 -- Tắt tự động commit để có thể rollback nếu có lỗi
