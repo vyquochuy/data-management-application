@@ -24,5 +24,14 @@ namespace QUANTRICSDL
             nhanVien.Show();
             this.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MoMonForm momonForm = new MoMonForm();
+            this.Hide();
+            momonForm.Show();
+            this.Hide();
+            this.Show();
+        }
     }
 }
