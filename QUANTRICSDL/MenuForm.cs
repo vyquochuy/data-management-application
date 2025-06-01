@@ -39,6 +39,13 @@
             this.Show();
         }
 
+        private void bAuditLog_Click(object sender, EventArgs e)
+        {
+            AuditLogForm auditLogForm = new AuditLogForm();
+            this.Hide();
+            auditLogForm.ShowDialog();
+            this.Show();
+        }
         private void btnGuiThongBao_Click(object sender, EventArgs e)
         {
             ThongBaoForm thongBaoForm = new ThongBaoForm();
@@ -54,6 +61,5 @@
             listForm.ShowDialog();
             this.Show();
         }
-
     }
 }
