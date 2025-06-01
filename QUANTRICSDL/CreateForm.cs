@@ -20,7 +20,7 @@ namespace QUANTRICSDL
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            this.Close(); ;
+            this.Close();
         }
 
         private void bBack2_Click(object sender, EventArgs e)

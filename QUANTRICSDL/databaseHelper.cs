@@ -27,13 +27,18 @@ public static class DatabaseHelper
         }
     }
 
-    public static DataTable ExecuteQuery(string sql)
+    public static DataTable ExecuteQuery(string sql, params OracleParameter[] parameters)
     {
         using (var conn = new OracleConnection(connectionString))
         {
             conn.Open();
             using (var cmd = new OracleCommand(sql, conn))
             {
+                if (parameters != null && parameters.Length > 0)
+                {
+                    cmd.Parameters.AddRange(parameters);
+                }
+
                 using (var adapter = new OracleDataAdapter(cmd))
                 {
                     DataTable dt = new DataTable();
@@ -43,4 +48,5 @@ public static class DatabaseHelper
             }
         }
     }
+
 }
