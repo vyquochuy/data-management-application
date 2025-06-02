@@ -19,19 +19,18 @@ namespace QUANTRICSDL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NhanVien nhanVien = new NhanVien();
-            this.Hide();
+            NhanVienForm nhanVien = new NhanVienForm();
+            //this.Hide();
             nhanVien.Show();
-            this.Show();
+            //this.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             MoMonForm momonForm = new MoMonForm();
-            this.Hide();
+            //this.Hide();
             momonForm.Show();
-            this.Hide();
-            this.Show();
+            //this.Show();
         }
     }
 }

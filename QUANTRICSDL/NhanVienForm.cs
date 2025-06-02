@@ -13,9 +13,9 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace QUANTRICSDL
 {
-    public partial class NhanVien : Form
+    public partial class NhanVienForm : Form
     {
-        public NhanVien()
+        public NhanVienForm()
         {
             InitializeComponent();
             Load += NhanVien_Load;

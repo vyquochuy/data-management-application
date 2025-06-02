@@ -18,31 +18,92 @@ namespace QUANTRICSDL
             loadListView();
         }
 
+        private string loadRole()
+        {
+            DataTable dt = DatabaseHelper.ExecuteQuery("SELECT GRANTED_ROLE FROM USER_ROLE_PRIVS");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string role = row["GRANTED_ROLE"].ToString();
+
+                if (role == "SV")
+                    return "SV";
+                if (role == "GV")
+                    return "GV";
+                if (role == "NVPDT")
+                    return "NVPDT";
+                if (role == "TRGDV")
+                    return "TRGDV";
+            }
+
+            return "";
+        }
+
+
         private void loadListView()
         {
-            ListViewItem item = new ListViewItem(new[] { "MM001", "HP001", "GV001", "1", "2025" });
-            lvMoMon.Items.Add(item);
+            string role = loadRole();
+            string view;
+            if (role == "SV")
+                view = "MOMON_SINHVIEN_VIEW";
+            else if (role == "TRGDV")
+                view = "MOMON_TRGDV_VIEW";
+            else if (role == "NVPDT")
+                view = "MOMON_NVPDT_VIEW";
+            else if (role == "GV")
+                view = "MOMON_GV_VIEW";
+            else
+                return;
 
+            string sql = $"SELECT * FROM SCHOOl_USER.{view}"; ;
+            DataTable dt = DatabaseHelper.ExecuteQuery(sql);
+
+            lvMoMon.Items.Clear();
+
+            // Duyệt từng dòng và thêm vào ListView
+            foreach (DataRow row in dt.Rows)
+            {
+                ListViewItem item = new ListViewItem(new[]
+                {
+                    row["MAMM"].ToString(),
+                    row["MAHP"].ToString(),
+                    row["MAGV"].ToString(),
+                    row["HK"].ToString(),
+                    row["NAM"].ToString()
+                });
+
+                lvMoMon.Items.Add(item);
+            }
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            this.Close(); // hoặc mở form trước đó nếu có
+            this.Close();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng thêm đang được phát triển...");
+            if (loadRole() == "NVPDT")
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Bạn không quyền thêm");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng xóa đang được phát triển...");
+            MessageBox.Show("Nhấn đúp vào hàng để xóa");
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng sửa đang được phát triển...");
+            EditMoMonForm form = new EditMoMonForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void lvMoMon_SelectedIndexChanged(object sender, EventArgs e)
