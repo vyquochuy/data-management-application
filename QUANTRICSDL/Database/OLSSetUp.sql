@@ -5,6 +5,7 @@ BEGIN
     LBACSYS.CONFIGURE_OLS; -- This procedure registers Oracle Label Security. 
     LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS; -- This procedure enables it
 END;
+/
 
 SHUTDOWN IMMEDIATE; 
 STARTUP; 
@@ -202,28 +203,65 @@ CREATE SEQUENCE THONGBAO_SEQ
   NOCACHE
   NOCYCLE;
 
-CONNECT admin/123@localhost:1521/QLCSDL;
+-- Kết nối với ADMIN
+CONNECT ADMIN/123@localhost:1521/QLCSDL;
 
--- 1.1.3. Tạo user NHANVIEN_USER (mật khẩu đặt tạm là 'nv123')
-CREATE USER NHANVIEN_USER IDENTIFIED BY nv123;
-
--- 1.1.4. Cấp quyền cơ bản để có thể đăng nhập và SELECT từ bảng THONGBAO
-GRANT CONNECT TO NHANVIEN_USER;
-GRANT CREATE SESSION TO NHANVIEN_USER;
-
--- 1.1.5. Cấp quyền SELECT trên bảng SCHOOL_USER.THONGBAO
-GRANT SELECT ON SCHOOL_USER.THONGBAO TO NHANVIEN_USER;
-
-CONNECT ADMIN_OLS/123@localhost:1521/QLCSDL
--- 1.2.2. Gán nhãn “NHANVIEN” cho user NHANVIEN_USER
+-- 1. Tạo và cấp quyền cho các users
+DECLARE
+  lvls   SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('SINHVIEN', 'NHANVIEN', 'TRGDV');
+  comps  SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('TOAN', 'LY', 'HOA', 'HANHCHINH');
+  grps   SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('COSO1', 'COSO2');
+  uname  VARCHAR2(100);
 BEGIN
-  SA_USER_ADMIN.SET_USER_LABELS(
-    policy_name => 'THONGBAO_POLICY',
-    user_name => 'NHANVIEN_USER',
-    max_read_label => 'NHANVIEN:HOA:COSO2',
-    min_write_label => 'NHANVIEN',
-    def_label => 'NHANVIEN:HOA:COSO2',
-    row_label => 'NHANVIEN:HOA:COSO2'
-  );
+  FOR i IN 1 .. lvls.COUNT LOOP
+    FOR j IN 1 .. comps.COUNT LOOP
+      FOR k IN 1 .. grps.COUNT LOOP
+        uname := 'U_' || lvls(i) || '_' || comps(j) || '_' || grps(k);
+        BEGIN
+          EXECUTE IMMEDIATE 'CREATE USER ' || uname || ' IDENTIFIED BY ' || uname;
+        EXCEPTION WHEN OTHERS THEN
+          IF SQLCODE != -01920 THEN -- ignore 'user already exists'
+            RAISE;
+          END IF;
+        END;
+        EXECUTE IMMEDIATE 'GRANT CONNECT, CREATE SESSION TO ' || uname;
+        EXECUTE IMMEDIATE 'GRANT SELECT ON SCHOOL_USER.THONGBAO TO ' || uname;
+      END LOOP;
+    END LOOP;
+  END LOOP;
+END;
+/
+
+
+-- Kết nối với ADMIN_OLS
+CONNECT ADMIN_OLS/123@localhost:1521/QLCSDL;
+
+DECLARE
+  lvls   SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('SINHVIEN', 'NHANVIEN', 'TRGDV');
+  comps  SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('TOAN', 'LY', 'HOA', 'HANHCHINH');
+  grps   SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('COSO1', 'COSO2');
+  uname  VARCHAR2(100);
+  label  VARCHAR2(100);
+BEGIN
+  FOR i IN 1 .. lvls.COUNT LOOP
+    FOR j IN 1 .. comps.COUNT LOOP
+      FOR k IN 1 .. grps.COUNT LOOP
+        uname := 'U_' || lvls(i) || '_' || comps(j) || '_' || grps(k);
+        label := lvls(i) || ':' || comps(j) || ':' || grps(k);
+        BEGIN
+          SA_USER_ADMIN.SET_USER_LABELS(
+            policy_name     => 'THONGBAO_POLICY',
+            user_name       => uname,
+            max_read_label  => label,
+            min_write_label => lvls(i),
+            def_label       => label,
+            row_label       => label
+          );
+        EXCEPTION WHEN OTHERS THEN
+          DBMS_OUTPUT.PUT_LINE('Lỗi với user ' || uname || ': ' || SQLERRM);
+        END;
+      END LOOP;
+    END LOOP;
+  END LOOP;
 END;
 /

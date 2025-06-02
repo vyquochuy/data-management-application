@@ -40,7 +40,7 @@ namespace QUANTRICSDL
                 sql = $"SELECT * FROM SCHOOL_USER.NHANVIEN_VIEW";
             }
 
-            //MessageBox.Show(sql);
+            MessageBox.Show(sql);
             DataTable finalRes = DatabaseHelper.ExecuteQuery(sql);
             listViewNhanVien.Items.Clear();
 
