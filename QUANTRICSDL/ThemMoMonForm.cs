@@ -29,22 +29,10 @@ namespace QUANTRICSDL
 
             try
             {
-                using (var conn = new Oracle.ManagedDataAccess.Client.OracleConnection("your_connection_string_here"))
-                {
-                    conn.Open();
-                    string query = "INSERT INTO MOMON (MAMM, MAHP, MAGV, HK, NAM) VALUES (:mamm, :mahp, :magv, :hk, :nam)";
-                    using (var cmd = new Oracle.ManagedDataAccess.Client.OracleCommand(query, conn))
-                    {
-                        cmd.Parameters.Add(":mamm", mamon);
-                        cmd.Parameters.Add(":mahp", mahp);
-                        cmd.Parameters.Add(":magv", magv);
-                        cmd.Parameters.Add(":hk", int.Parse(hk));
-                        cmd.Parameters.Add(":nam", int.Parse(nam));
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm mở môn thành công.");
-                    }
-                }
+                string sql = $"INSERT INTO SCHOOL_USER.MOMON_NVPDT_VIEW (MAMM, MAHP, MAGV, HK, NAM) " +
+                    $"VALUES ('{mamon}', '{mahp}', '{magv}', {hk}, {nam})";
+                DatabaseHelper.ExecuteNonQuery(sql);
+                MessageBox.Show("Thêm thành công");
             }
             catch (Exception ex)
             {

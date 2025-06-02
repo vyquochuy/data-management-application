@@ -85,7 +85,10 @@ namespace QUANTRICSDL
         {
             if (loadRole() == "NVPDT")
             {
-                
+                ThemMoMonForm momonForm = new ThemMoMonForm();
+                this.Hide();
+                momonForm.ShowDialog();
+                this.Show();
             }
             else
             {
