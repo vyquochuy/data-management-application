@@ -11,6 +11,7 @@ EXCEPTION
             RAISE;
         END IF;
 END;
+/
 
 -- Xóa PDB nếu tồn tại
 BEGIN
