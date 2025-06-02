@@ -56,8 +56,10 @@ namespace QUANTRICSDL
 
         private void bDelete2_Click(object sender, EventArgs e)
         {
+            string roleName = textBox4.Text.Trim(); // Giả sử có TextBox tbRoleName để nhập tên ROLE
+
             DialogResult result = MessageBox.Show(
-                "Bạn có thật sự muốn xóa không?",
+                $"Bạn có thật sự muốn xóa role {roleName} không?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -65,9 +67,16 @@ namespace QUANTRICSDL
 
             if (result == DialogResult.Yes)
             {
-                // TODO: Thực hiện xóa đối tượng ở đây
-                // Ví dụ: gọi hàm DeleteUser() hoặc xóa trên DataGridView v.v.
-                MessageBox.Show("Đã xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    string sql = $"DROP ROLE {roleName}";
+                    DatabaseHelper.ExecuteNonQuery(sql);
+                    MessageBox.Show("Đã xóa role thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (OracleException ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi xóa role", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

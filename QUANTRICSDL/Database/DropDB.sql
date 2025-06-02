@@ -1,5 +1,5 @@
 -- Kết nối với SYS
-CONNECT SYS/123@localhost:1521/xe AS SYSDBA;
+ALTER SESSION SET CONTAINER = CDB$ROOT;
 
 -- Đóng PDB nếu đang mở
 BEGIN

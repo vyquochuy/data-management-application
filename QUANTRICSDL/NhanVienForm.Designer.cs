@@ -1,6 +1,6 @@
 ﻿namespace QUANTRICSDL
 {
-    partial class NhanVien
+    partial class NhanVienForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Button btnBack;
@@ -156,7 +156,7 @@
             bDelete.UseVisualStyleBackColor = true;
             bDelete.Click += deleteClick;
             // 
-            // NhanVien
+            // NhanVienForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
