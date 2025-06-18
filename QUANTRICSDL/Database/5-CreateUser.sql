@@ -1,5 +1,5 @@
-﻿-- chạy với quyền admin
-
+-- chạy với quyền admin
+CONNECT SYS/123@localhost:1521/QLCSDL as SYSDBA;
 -- Trưởng đơn vị (Nguyễn Văn A)
 CREATE USER NV001 IDENTIFIED BY 123;
 GRANT CONNECT TO NV001;

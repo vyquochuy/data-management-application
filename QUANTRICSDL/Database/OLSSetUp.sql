@@ -1,4 +1,4 @@
-﻿-- Connect bằng SYS để cấu hình OLS
+-- Connect bằng SYS để cấu hình OLS
 ALTER SESSION SET CONTAINER = CDB$ROOT;
 
 BEGIN

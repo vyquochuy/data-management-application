@@ -7,18 +7,6 @@ GRANT CREATE ANY CONTEXT TO school_user;
 GRANT CREATE TRIGGER TO school_user;
 GRANT ADMINISTER DATABASE TRIGGER TO school_user;
 
--- Tạo các test users
--- CREATE USER user_sv001 IDENTIFIED BY password123;
--- CREATE USER user_gv001 IDENTIFIED BY password123;  
--- CREATE USER user_ctsv001 IDENTIFIED BY password123;
--- CREATE USER user_pdt001 IDENTIFIED BY password123;
-
--- Cấp quyền connect cho test users
--- GRANT CONNECT TO user_sv001;
--- GRANT CONNECT TO user_gv001;
--- GRANT CONNECT TO user_ctsv001;  
--- GRANT CONNECT TO user_pdt001;
-
 -- BƯỚC 2: Connect với school_user để thiết lập VPD
 CONNECT school_user/123@localhost:1521/QLCSDL;
 
@@ -101,12 +89,6 @@ BEGIN
 END;
 /
 
--- Tạo roles
-CREATE ROLE SV;
-CREATE ROLE GV;
-CREATE ROLE NVCTSV;
-CREATE ROLE NVPDT;
-
 -- Áp dụng VPD policies (ĐÃ SỬA SCHEMA NAME)
 BEGIN
     DBMS_RLS.ADD_POLICY(
@@ -146,29 +128,6 @@ BEGIN
     );
 END;
 /
-
--- Cấp quyền cho roles
-GRANT SELECT, UPDATE ON SINHVIEN TO SV;
-GRANT SELECT ON SINHVIEN TO GV;
-GRANT SELECT, INSERT, UPDATE, DELETE ON SINHVIEN TO NVCTSV;
-GRANT UPDATE ON SINHVIEN TO NVPDT;
-
--- Cấp quyền truy cập cho test users đến các bảng
--- GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO user_sv001;
--- GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO user_gv001;
--- GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO user_ctsv001;
--- GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO user_pdt001;
--- 
--- GRANT SELECT ON SCHOOL_USER.NHANVIEN TO user_sv001;
--- GRANT SELECT ON SCHOOL_USER.NHANVIEN TO user_gv001;
--- GRANT SELECT ON SCHOOL_USER.NHANVIEN TO user_ctsv001;
--- GRANT SELECT ON SCHOOL_USER.NHANVIEN TO user_pdt001;
--- 
--- Gán roles cho users
--- GRANT SV TO user_sv001;
--- GRANT GV TO user_gv001;
--- GRANT NVCTSV TO user_ctsv001;
--- GRANT NVPDT TO user_pdt001;
 
 -- Triggers kiểm soát
 CREATE OR REPLACE TRIGGER trg_sinhvien_insert
@@ -210,11 +169,11 @@ END;
 
 -- Test script (chạy từng cái một để kiểm tra)
 -- Test 1: Connect với user sinh viên (thay đổi thành username thực tế của sinh viên)
--- CONNECT user_sv001/password123@localhost:1521/QLCSDL;
--- SELECT * FROM SCHOOL_USER.SINHVIEN;
+CONNECT SV001/123@localhost:1521/QLCSDL;
+SELECT * FROM SCHOOL_USER.SINHVIEN;
 
 -- Test 2: Connect với user giảng viên  
--- CONNECT user_gv001/password123@localhost:1521/QLCSDL;
--- SELECT * FROM SCHOOL_USER.SINHVIEN;
+CONNECT gv001/123@localhost:1521/QLCSDL;
+SELECT * FROM SCHOOL_USER.SINHVIEN;
 
 COMMIT;
