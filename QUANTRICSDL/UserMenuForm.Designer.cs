@@ -35,14 +35,16 @@
             btnMoMon = new Button();
             btnGuiThongBao = new Button();
             btnXemThongBao = new Button();
+            btnSinhVien = new Button();
+            btnDangKy = new Button();
             SuspendLayout();
             // 
             // btnOpenNhanVien
             // 
-            btnOpenNhanVien.Location = new Point(369, 72);
-            btnOpenNhanVien.Margin = new Padding(5);
+            btnOpenNhanVien.Location = new Point(199, 34);
+            btnOpenNhanVien.Margin = new Padding(3, 2, 3, 2);
             btnOpenNhanVien.Name = "btnOpenNhanVien";
-            btnOpenNhanVien.Size = new Size(520, 93);
+            btnOpenNhanVien.Size = new Size(280, 44);
             btnOpenNhanVien.TabIndex = 0;
             btnOpenNhanVien.Text = "Nhân viên";
             btnOpenNhanVien.UseVisualStyleBackColor = true;
@@ -50,10 +52,10 @@
             // 
             // btnMoMon
             // 
-            btnMoMon.Location = new Point(369, 205);
-            btnMoMon.Margin = new Padding(5);
+            btnMoMon.Location = new Point(199, 96);
+            btnMoMon.Margin = new Padding(3, 2, 3, 2);
             btnMoMon.Name = "btnMoMon";
-            btnMoMon.Size = new Size(520, 94);
+            btnMoMon.Size = new Size(280, 44);
             btnMoMon.TabIndex = 1;
             btnMoMon.Text = "Mở môn";
             btnMoMon.UseVisualStyleBackColor = true;
@@ -61,10 +63,10 @@
             // 
             // btnGuiThongBao
             // 
-            btnGuiThongBao.Location = new Point(369, 362);
-            btnGuiThongBao.Margin = new Padding(5);
+            btnGuiThongBao.Location = new Point(199, 289);
+            btnGuiThongBao.Margin = new Padding(3, 2, 3, 2);
             btnGuiThongBao.Name = "btnGuiThongBao";
-            btnGuiThongBao.Size = new Size(520, 94);
+            btnGuiThongBao.Size = new Size(280, 44);
             btnGuiThongBao.TabIndex = 2;
             btnGuiThongBao.Text = "Gửi thông báo";
             btnGuiThongBao.UseWaitCursor = true;
@@ -72,27 +74,50 @@
             // 
             // btnXemThongBao
             // 
-            btnXemThongBao.Location = new Point(369, 526);
-            btnXemThongBao.Margin = new Padding(5);
+            btnXemThongBao.Location = new Point(199, 355);
+            btnXemThongBao.Margin = new Padding(3, 2, 3, 2);
             btnXemThongBao.Name = "btnXemThongBao";
-            btnXemThongBao.Size = new Size(520, 94);
+            btnXemThongBao.Size = new Size(280, 44);
             btnXemThongBao.TabIndex = 3;
             btnXemThongBao.Text = "Xem thông báo";
             btnXemThongBao.UseWaitCursor = true;
             btnXemThongBao.Click += btnXemThongBao_Click;
             // 
+            // btnSinhVien
+            // 
+            btnSinhVien.Location = new Point(199, 160);
+            btnSinhVien.Name = "btnSinhVien";
+            btnSinhVien.Size = new Size(280, 45);
+            btnSinhVien.TabIndex = 4;
+            btnSinhVien.Text = "Sinh Viên";
+            btnSinhVien.UseVisualStyleBackColor = true;
+            btnSinhVien.Click += btnSinhVien_Click;
+            // 
+            // btnDangKy
+            // 
+            btnDangKy.Location = new Point(199, 223);
+            btnDangKy.Name = "btnDangKy";
+            btnDangKy.Size = new Size(280, 44);
+            btnDangKy.TabIndex = 5;
+            btnDangKy.Text = "Đăng ký";
+            btnDangKy.UseVisualStyleBackColor = true;
+            btnDangKy.Click += btnDangKy_Click_1;
+            // 
             // UserMenuForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 714);
-            Controls.Add(btnMoMon);
-            Controls.Add(btnOpenNhanVien);
+            ClientSize = new Size(700, 431);
+            Controls.Add(btnDangKy);
+            Controls.Add(btnSinhVien);
             Controls.Add(btnGuiThongBao);
             Controls.Add(btnXemThongBao);
-            Margin = new Padding(5);
+            Controls.Add(btnMoMon);
+            Controls.Add(btnOpenNhanVien);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserMenuForm";
             Text = "UserMenuForm";
+            Load += UserMenuForm_Load;
             ResumeLayout(false);
         }
 
@@ -100,5 +125,7 @@
 
         private Button btnOpenNhanVien;
         private Button btnMoMon;
+        private Button btnSinhVien;
+        private Button btnDangKy;
     }
 }

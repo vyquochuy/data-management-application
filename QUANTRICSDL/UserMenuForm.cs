@@ -48,5 +48,23 @@ namespace QUANTRICSDL
             listForm.ShowDialog();
             this.Show();
         }
+
+        private void btnSinhVien_Click(object sender, EventArgs e)
+        {
+            SinhVienForm sinhVienForm = new SinhVienForm();
+            sinhVienForm.ShowDialog();
+
+        }
+
+        private void UserMenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangKy_Click_1(object sender, EventArgs e)
+        {
+            DangKyForm d = new DangKyForm();
+            d.ShowDialog();
+        }
     }
 }

@@ -173,5 +173,10 @@ namespace QUANTRICSDL
         {
             MessageBox.Show("Nhấn đúp vào một nhân để xóa");
         }
+
+        private void listViewNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

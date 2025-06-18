@@ -74,7 +74,7 @@
             btnXemThongTinQuyen.UseWaitCursor = true;
             btnXemThongTinQuyen.Click += btnXemThongTinQuyen_Click;
             // 
-            // button1
+            // btnSinhVien
             // 
             button1.Location = new Point(395, 533);
             button1.Margin = new Padding(5, 6, 5, 6);
