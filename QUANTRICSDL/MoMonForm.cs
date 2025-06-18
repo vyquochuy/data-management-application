@@ -111,7 +111,40 @@ namespace QUANTRICSDL
 
         private void lvMoMon_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (loadRole() != "NVPDT")
+            {
+                MessageBox.Show("Bạn không có quyền xóa");
+                return;
+            }
 
+            if (lvMoMon.SelectedItems.Count == 0)
+                return;
+
+            var result = MessageBox.Show("Bạn có chắc muốn xóa dòng đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes) return;
+
+            ListViewItem item = lvMoMon.SelectedItems[0];
+            string mamon = item.SubItems[0].Text;
+            string mahp = item.SubItems[1].Text;
+            string magv = item.SubItems[2].Text;
+            string hk = item.SubItems[3].Text;
+            string nam = item.SubItems[4].Text;
+
+            try
+            {
+                string sql = $@"
+                DELETE FROM SCHOOL_USER.MOMON_NVPDT_VIEW
+                WHERE MAMM = '{mamon}'";
+
+                MessageBox.Show(sql);
+                DatabaseHelper.ExecuteNonQuery(sql);
+                MessageBox.Show("Đã xóa thành công.");
+                loadListView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+            }
         }
     }
 }
