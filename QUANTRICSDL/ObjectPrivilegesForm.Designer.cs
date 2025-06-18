@@ -99,7 +99,7 @@ namespace QUANTRICSDL
             tabPage1.Text = "Nhân viên";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listViewDangKy
             // 
             listView1.Location = new Point(6, 6);
             listView1.Name = "listView1";
