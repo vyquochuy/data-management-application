@@ -44,7 +44,7 @@ namespace QUANTRICSDL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    if (username == "ADMIN" || username == "admin")
+                    if (username == "ADMIN" || username == "admin" || username == "school_user")
                     {
                         AutoGrant.updateNhanVien();
                         MenuForm menuForm = new MenuForm();

@@ -1,6 +1,6 @@
 ﻿namespace QUANTRICSDL
 {
-    partial class NhanVien
+    partial class NhanVienForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Button btnBack;
@@ -46,10 +46,9 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 15);
-            btnBack.Margin = new Padding(3, 4, 3, 4);
+            btnBack.Location = new Point(10, 11);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(75, 29);
+            btnBack.Size = new Size(66, 22);
             btnBack.TabIndex = 0;
             btnBack.Text = "Quay lại";
             btnBack.UseVisualStyleBackColor = true;
@@ -57,10 +56,9 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(765, 15);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Location = new Point(669, 11);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 29);
+            btnAdd.Size = new Size(66, 22);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Thêm";
             btnAdd.UseVisualStyleBackColor = true;
@@ -71,14 +69,14 @@
             listViewNhanVien.Columns.AddRange(new ColumnHeader[] { columnMaNV, columnHoTen, columnPhai, columnNgaySinh, columnLuong, columnPhuCap, columnDT, columnVaiTro, columnMaDV });
             listViewNhanVien.FullRowSelect = true;
             listViewNhanVien.GridLines = true;
-            listViewNhanVien.Location = new Point(12, 62);
-            listViewNhanVien.Margin = new Padding(3, 4, 3, 4);
+            listViewNhanVien.Location = new Point(10, 46);
             listViewNhanVien.MultiSelect = false;
             listViewNhanVien.Name = "listViewNhanVien";
-            listViewNhanVien.Size = new Size(828, 484);
+            listViewNhanVien.Size = new Size(725, 364);
             listViewNhanVien.TabIndex = 2;
             listViewNhanVien.UseCompatibleStateImageBehavior = false;
             listViewNhanVien.View = View.Details;
+            listViewNhanVien.SelectedIndexChanged += listViewNhanVien_SelectedIndexChanged;
             listViewNhanVien.MouseClick += listViewNhanVien_MouseClick;
             // 
             // columnMaNV
@@ -128,9 +126,10 @@
             // 
             // bChangeMyPhone
             // 
-            bChangeMyPhone.Location = new Point(665, 15);
+            bChangeMyPhone.Location = new Point(582, 11);
+            bChangeMyPhone.Margin = new Padding(3, 2, 3, 2);
             bChangeMyPhone.Name = "bChangeMyPhone";
-            bChangeMyPhone.Size = new Size(94, 29);
+            bChangeMyPhone.Size = new Size(82, 22);
             bChangeMyPhone.TabIndex = 3;
             bChangeMyPhone.Text = "Đổi SDT";
             bChangeMyPhone.UseVisualStyleBackColor = true;
@@ -138,9 +137,10 @@
             // 
             // bEdit
             // 
-            bEdit.Location = new Point(565, 15);
+            bEdit.Location = new Point(494, 11);
+            bEdit.Margin = new Padding(3, 2, 3, 2);
             bEdit.Name = "bEdit";
-            bEdit.Size = new Size(94, 29);
+            bEdit.Size = new Size(82, 22);
             bEdit.TabIndex = 4;
             bEdit.Text = "Chỉnh sửa";
             bEdit.UseVisualStyleBackColor = true;
@@ -148,27 +148,27 @@
             // 
             // bDelete
             // 
-            bDelete.Location = new Point(465, 15);
+            bDelete.Location = new Point(407, 11);
+            bDelete.Margin = new Padding(3, 2, 3, 2);
             bDelete.Name = "bDelete";
-            bDelete.Size = new Size(94, 29);
+            bDelete.Size = new Size(82, 22);
             bDelete.TabIndex = 5;
             bDelete.Text = "Xóa";
             bDelete.UseVisualStyleBackColor = true;
             bDelete.Click += deleteClick;
             // 
-            // NhanVien
+            // NhanVienForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 562);
+            ClientSize = new Size(746, 422);
             Controls.Add(bDelete);
             Controls.Add(bEdit);
             Controls.Add(bChangeMyPhone);
             Controls.Add(listViewNhanVien);
             Controls.Add(btnAdd);
             Controls.Add(btnBack);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "NhanVien";
+            Name = "NhanVienForm";
             Text = "Quản lý nhân viên";
             ResumeLayout(false);
         }

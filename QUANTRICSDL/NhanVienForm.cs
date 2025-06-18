@@ -13,9 +13,9 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace QUANTRICSDL
 {
-    public partial class NhanVien : Form
+    public partial class NhanVienForm : Form
     {
-        public NhanVien()
+        public NhanVienForm()
         {
             InitializeComponent();
             Load += NhanVien_Load;
@@ -40,7 +40,7 @@ namespace QUANTRICSDL
                 sql = $"SELECT * FROM SCHOOL_USER.NHANVIEN_VIEW";
             }
 
-            //MessageBox.Show(sql);
+            MessageBox.Show(sql);
             DataTable finalRes = DatabaseHelper.ExecuteQuery(sql);
             listViewNhanVien.Items.Clear();
 
@@ -172,6 +172,11 @@ namespace QUANTRICSDL
         private void deleteClick(object sender, EventArgs e)
         {
             MessageBox.Show("Nhấn đúp vào một nhân để xóa");
+        }
+
+        private void listViewNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
