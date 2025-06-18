@@ -119,42 +119,6 @@ namespace QUANTRICSDL
                 _ => null
             };
         }
-
-        /// <summary>
-        /// Tính "label_tag" (số nguyên) dựa trên:
-        ///   - level: 1/2/3
-        ///   - danh sách donViSelected (các tên "Toán","Lý","Hóa","Hành chính")
-        ///   - danh sách coSoSelected (các tên "Cơ sở 1"/"Cơ sở 2")
-        /// 
-        /// Cơ chế:
-        ///   1. Từ level => lấy levelName = "SINHVIEN"/"NHANVIEN"/"TRGDV"
-        ///   2. Từ donViSelected => build danh sách mã compartments như ["10","30",...] 
-        ///      rồi chuyển qua tên "TOAN"/"HOA"/... 
-        ///   3. Từ coSoSelected => build danh sách mã groups như ["1","2",...] 
-        ///      rồi chuyển qua tên "COSO1"/"COSO2"
-        ///   4. Ghép thành chuỗi labelStr theo cú pháp trong olsSetUp (vd: "TRGDV:HOA:COSO2")
-        ///   5. Tra cứu trong dictionary để lấy số tag tương ứng (vd: 101)
-        ///   6. Nếu không tìm thấy, trả về -1
-        /// 
-        /// Các nhãn bạn đã tạo trong olsSetUp.sql là:
-        ///   - Level 3 (TRGDV):
-        ///       tag=100 => "TRGDV"
-        ///       tag=101 => "TRGDV:HOA:COSO2"
-        ///       tag=102 => "TRGDV:LY:COSO2"
-        ///       tag=103 => "TRGDV:HANHCHINH"
-        ///       tag=104 => "TRGDV:HOA:COSO1"
-        ///       tag=105 => "TRGDV:HOA:COSO1,COSO2"
-        ///   - Level 2 (NHANVIEN):
-        ///       tag=110 => "NHANVIEN"
-        ///       tag=111 => "NHANVIEN:HOA:COSO2"
-        ///       tag=112 => "NHANVIEN:HANHCHINH:COSO1"
-        ///   - Level 1 (SINHVIEN):
-        ///       tag=120 => "SINHVIEN"
-        ///       tag=121 => "SINHVIEN:HOA:COSO2"
-        ///       tag=122 => "SINHVIEN:HOA:COSO1"
-        ///       tag=123 => "SINHVIEN:HOA:COSO1,COSO2"
-        ///       tag=124 => "SINHVIEN::COSO1,COSO2"
-        /// </summary>
         private int ComputeLabelTag(int level, List<string> donViSelected, List<string> coSoSelected)
         {
             // 1. Chuyển level thành tên levelName
@@ -195,10 +159,6 @@ namespace QUANTRICSDL
             string labelStr = levelName;
             if (compPart != null && groupPart != null)
             {
-                // Cả hai đều có => "TRGDV:HOA,COSO| … :COSO…"
-                // Nhưng theo olsSetUp.sql, format compartments chỉ là "HOA" (không join bởi dấu phẩy nếu chỉ 1),
-                // nếu có nhiều compartments (vd có 2 đv), format là "DV1,DV2", tuỳ bạn.
-                // Ở đây chúng ta làm tương tự: "TRGDV:HOA: COSO2" hoặc "TRGDV:HOA,LY:COSO1,COSO2"
                 labelStr = $"{levelName}:{compPart}:{groupPart}";
             }
             else if (compPart != null)
