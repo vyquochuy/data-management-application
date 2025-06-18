@@ -41,10 +41,21 @@
 
         private void bAuditLog_Click(object sender, EventArgs e)
         {
-            AuditLogForm auditLogForm = new AuditLogForm();
-            this.Hide();
-            auditLogForm.ShowDialog();
-            this.Show();
+            try
+            {
+                // Kiểm tra quyền xem audit log
+                string test = "SELECT COUNT(*) FROM DBA_AUDIT_TRAIL WHERE ROWNUM = 1";
+                DatabaseHelper.ExecuteScalar(test); // nếu lỗi → vào catch
+
+                AuditLogForm auditLogForm = new AuditLogForm();
+                this.Hide();
+                auditLogForm.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void btnGuiThongBao_Click(object sender, EventArgs e)
         {

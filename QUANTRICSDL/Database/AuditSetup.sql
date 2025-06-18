@@ -1,9 +1,135 @@
-﻿-- Kích hoạt audit
+
 ALTER SESSION SET CONTAINER = CDB$ROOT;
 ALTER SYSTEM SET audit_trail = DB, EXTENDED SCOPE=SPFILE;
 SHUTDOWN IMMEDIATE;
 STARTUP;
 
+-- Restart Oracle instance
+SHUTDOWN IMMEDIATE;
+STARTUP;
+
+-- Kiểm tra bật audit thành công
+SHOW PARAMETER audit_trail;
+
+---------------------------------------------------------------
+-- PHẦN AUDIT CHI TIẾT (Làm tại PDB QLCSDL)
+---------------------------------------------------------------
+
+ALTER SESSION SET CONTAINER = QLCSDL;
+
+-- Xóa các audit cũ nếu có
+NOAUDIT ALL;
+
+---------------------------------------------------------------
+-- Standard Audit (Audit toàn bộ các bảng cần thiết)
+---------------------------------------------------------------
+
+AUDIT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.NHANVIEN BY ACCESS;
+AUDIT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.DANGKY BY ACCESS;
+AUDIT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN BY ACCESS;
+
+---------------------------------------------------------------
+-- Unified Audit Rule (Audit logic phức tạp hơn)
+---------------------------------------------------------------
+
+-- Audit khi có UPDATE trên bảng DANGKY (chung cho mọi user)
+AUDIT UPDATE ON SCHOOL_USER.DANGKY;
+
+-- Audit khi có SELECT trên các cột lương/phụ cấp
+AUDIT SELECT ON SCHOOL_USER.NHANVIEN;
+
+---------------------------------------------------------------
+-- PHẦN PHÂN QUYỀN ROLE - USER
+---------------------------------------------------------------
+
+-- 1. Tạo các role
+CREATE ROLE ROLE_NVPKT;
+CREATE ROLE ROLE_NVTCHC;
+CREATE ROLE ROLE_GV;
+
+-- 2. Cấp quyền vào role
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.NHANVIEN TO ROLE_NVPKT;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.DANGKY TO ROLE_NVPKT;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO ROLE_NVPKT;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.NHANVIEN TO ROLE_NVTCHC;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.DANGKY TO ROLE_NVTCHC;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO ROLE_NVTCHC;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.NHANVIEN TO ROLE_GV;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.DANGKY TO ROLE_GV;
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHOOL_USER.SINHVIEN TO ROLE_GV;
+
+-- 3. Tạo user và gán role
+CREATE USER NV001 IDENTIFIED BY 123;
+GRANT CREATE SESSION TO NV001;
+GRANT ROLE_NVPKT TO NV001;
+
+CREATE USER TC001 IDENTIFIED BY 123;
+GRANT CREATE SESSION TO TC001;
+GRANT ROLE_NVTCHC TO TC001;
+
+CREATE USER GV001 IDENTIFIED BY 123;
+GRANT CREATE SESSION TO GV001;
+GRANT ROLE_GV TO GV001;
+
+---------------------------------------------------------------
+-- PHẦN TEST AUDIT
+---------------------------------------------------------------
+
+-- Login bằng GV001
+CONNECT GV001/123@localhost:1521/QLCSDL;
+
+-- Thực hiện thao tác để sinh audit log
+UPDATE SCHOOL_USER.DANGKY SET DIEMQT = 8 WHERE MASV = 'SV001';
+COMMIT;
+
+SELECT LUONG, PHUCAP FROM SCHOOL_USER.NHANVIEN;
+
+UPDATE SCHOOL_USER.DANGKY SET DIEMTH = 10 WHERE MASV = 'SV002';
+COMMIT;
+
+---------------------------------------------------------------
+-- PHẦN XEM LOG AUDIT SAU KHI TEST
+---------------------------------------------------------------
+
+CONNECT SYS/123@localhost:1521/QLCSDL AS SYSDBA;
+
+GRANT SELECT ANY DICTIONARY TO SCHOOL_USER;
+
+
+-- Login lại bằng SCHOOL_USER hoặc SYS
+CONNECT SCHOOL_USER/123@localhost:1521/QLCSDL;
+
+SELECT * FROM DBA_AUDIT_TRAIL ORDER BY EXTENDED_TIMESTAMP DESC;
+
+-- NV TCHC
+CREATE USER TCHC01 IDENTIFIED BY 123;
+GRANT CONNECT TO TCHC01;
+GRANT ROLE_TCHC TO TCHC01;
+
+-- Sinh viên SV001 (MASV giống user)
+CREATE USER SV001 IDENTIFIED BY 123;
+GRANT CONNECT TO SV001;
+GRANT ROLE_SV TO SV001;
+
+-- Trưởng đơn vị
+CREATE USER TRGDV01 IDENTIFIED BY 123;
+GRANT CONNECT TO TRGDV01;
+GRANT ROLE_TRGDV TO TRGDV01;
+
+-- Nhân viên cơ bản
+CREATE USER NVCB01 IDENTIFIED BY 123;
+GRANT CONNECT TO NVCB01;
+GRANT ROLE_NVCB TO NVCB01;
+
+-- NV PĐT
+CREATE USER PDT01 IDENTIFIED BY 123;
+GRANT CONNECT TO PDT01;
+GRANT ROLE_PDT TO PDT01;
+
+
+=======
 -- Kết nối đúng PDB và user
 ALTER SESSION SET CONTAINER = QLCSDL;
 -- Để dùng các gói audit, security khác
