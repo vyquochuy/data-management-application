@@ -38,16 +38,17 @@ namespace QUANTRICSDL
             try
             {
                 string sqlAudit = @"
-            SELECT 
-                OBJ_NAME AS OBJECT_NAME, 
-                OBJ_NAME AS TABLE_NAME, 
-                ACTION_NAME, 
-                NULL AS COLUMN_NAME,
-                TO_CHAR(EXTENDED_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS') AS ACTION_TIME, 
-                COMMENT_TEXT AS DATA_CONTENT
-            FROM DBA_AUDIT_TRAIL
-            WHERE USERNAME = :username
-            ORDER BY EXTENDED_TIMESTAMP DESC";
+                SELECT 
+                    DBUSERNAME, 
+                    TO_CHAR(EVENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS') AS ACTION_TIME, 
+                    ACTION_NAME, 
+                    OBJECT_NAME, 
+                    UNIFIED_AUDIT_POLICIES, 
+                    SQL_TEXT
+                FROM UNIFIED_AUDIT_TRAIL
+                WHERE DBUSERNAME = :username
+                ORDER BY EVENT_TIMESTAMP DESC";
+
 
                 var param1 = new OracleParameter("username", selectedUser);
                 DataTable dtAudit = DatabaseHelper.ExecuteQuery(sqlAudit, param1);
@@ -55,15 +56,15 @@ namespace QUANTRICSDL
                 foreach (DataRow row in dtAudit.Rows)
                 {
                     var item = new ListViewItem(new[] {
-                        row["OBJECT_NAME"]?.ToString(),
-                        row["TABLE_NAME"]?.ToString(),
-                        row["ACTION_NAME"]?.ToString(),
-                        "", // không có column cụ thể trong audit chuẩn
-                        row["ACTION_TIME"]?.ToString(),
-                        row["DATA_CONTENT"]?.ToString()
-                    });
+                    row["OBJECT_NAME"]?.ToString(),                  // Tên đối tượng
+                    row["ACTION_TIME"]?.ToString(),                  // Thời gian
+                    row["ACTION_NAME"]?.ToString(),                  // Hành động
+                    row["SQL_TEXT"]?.ToString()                      // Nội dung (SQL Text)
+                });
+
                     listViewLogInform.Items.Add(item);
                 }
+
                 lbStatus.Text = $"Đã tải {listViewLogInform.Items.Count} log từ DBA_AUDIT_TRAIL cho user {selectedUser}.";
 
 
@@ -117,6 +118,7 @@ namespace QUANTRICSDL
             listViewLogInform.View = View.Details;
             listViewLogInform.FullRowSelect = true;
             listViewLogInform.GridLines = true;
+            listViewLogInform.DoubleClick += listViewLogInform_DoubleClick;
         }
 
         private void btnEnableAudit_Click(object sender, EventArgs e)
@@ -168,5 +170,15 @@ namespace QUANTRICSDL
                 MessageBox.Show("Lỗi khi tắt audit: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void listViewLogInform_DoubleClick(object sender, EventArgs e)
+        {
+            if (listViewLogInform.SelectedItems.Count > 0)
+            {
+                string sql = listViewLogInform.SelectedItems[0].SubItems[3].Text; // Cột "Nội dung"
+                MessageBox.Show(sql, "Chi tiết câu lệnh SQL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

@@ -34,8 +34,6 @@
             chOjectName = new ColumnHeader();
             chTableName = new ColumnHeader();
             chAct = new ColumnHeader();
-            chImpactedColumn = new ColumnHeader();
-            chTime = new ColumnHeader();
             chContent = new ColumnHeader();
             bBack = new Button();
             lbStatus = new Label();
@@ -46,17 +44,19 @@
             // cbUser
             // 
             cbUser.FormattingEnabled = true;
-            cbUser.Location = new Point(12, 12);
+            cbUser.Location = new Point(10, 9);
+            cbUser.Margin = new Padding(3, 2, 3, 2);
             cbUser.Name = "cbUser";
-            cbUser.Size = new Size(237, 28);
+            cbUser.Size = new Size(208, 23);
             cbUser.TabIndex = 0;
             cbUser.SelectedIndexChanged += cbUser_SelectedIndexChanged;
             // 
             // bSeen
             // 
-            bSeen.Location = new Point(255, 12);
+            bSeen.Location = new Point(223, 9);
+            bSeen.Margin = new Padding(3, 2, 3, 2);
             bSeen.Name = "bSeen";
-            bSeen.Size = new Size(94, 29);
+            bSeen.Size = new Size(82, 22);
             bSeen.TabIndex = 1;
             bSeen.Text = "Tra Log";
             bSeen.UseVisualStyleBackColor = true;
@@ -64,12 +64,13 @@
             // 
             // listViewLogInform
             // 
-            listViewLogInform.Columns.AddRange(new ColumnHeader[] { chOjectName, chTableName, chAct, chImpactedColumn, chTime, chContent });
+            listViewLogInform.Columns.AddRange(new ColumnHeader[] { chOjectName, chTableName, chAct, chContent });
             listViewLogInform.FullRowSelect = true;
             listViewLogInform.GridLines = true;
-            listViewLogInform.Location = new Point(12, 46);
+            listViewLogInform.Location = new Point(10, 34);
+            listViewLogInform.Margin = new Padding(3, 2, 3, 2);
             listViewLogInform.Name = "listViewLogInform";
-            listViewLogInform.Size = new Size(892, 381);
+            listViewLogInform.Size = new Size(639, 287);
             listViewLogInform.TabIndex = 2;
             listViewLogInform.UseCompatibleStateImageBehavior = false;
             listViewLogInform.View = View.Details;
@@ -82,23 +83,13 @@
             // 
             // chTableName
             // 
-            chTableName.Text = "Tên bảng";
+            chTableName.Text = "Thời gian";
             chTableName.Width = 120;
             // 
             // chAct
             // 
             chAct.Text = "Hành động";
             chAct.Width = 100;
-            // 
-            // chImpactedColumn
-            // 
-            chImpactedColumn.Text = "Cột bị tác động";
-            chImpactedColumn.Width = 150;
-            // 
-            // chTime
-            // 
-            chTime.Text = "Thời gian";
-            chTime.Width = 160;
             // 
             // chContent
             // 
@@ -107,9 +98,10 @@
             // 
             // bBack
             // 
-            bBack.Location = new Point(355, 12);
+            bBack.Location = new Point(311, 9);
+            bBack.Margin = new Padding(3, 2, 3, 2);
             bBack.Name = "bBack";
-            bBack.Size = new Size(94, 29);
+            bBack.Size = new Size(82, 22);
             bBack.TabIndex = 3;
             bBack.Text = "Quay lại";
             bBack.UseVisualStyleBackColor = true;
@@ -119,18 +111,19 @@
             // 
             lbStatus.AutoSize = true;
             lbStatus.Dock = DockStyle.Bottom;
-            lbStatus.Location = new Point(0, 430);
+            lbStatus.Location = new Point(0, 323);
             lbStatus.Name = "lbStatus";
-            lbStatus.Size = new Size(56, 20);
+            lbStatus.Size = new Size(45, 15);
             lbStatus.TabIndex = 4;
             lbStatus.Text = "Status: ";
             lbStatus.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnEnableAudit
             // 
-            btnEnableAudit.Location = new Point(455, 12);
+            btnEnableAudit.Location = new Point(398, 9);
+            btnEnableAudit.Margin = new Padding(3, 2, 3, 2);
             btnEnableAudit.Name = "btnEnableAudit";
-            btnEnableAudit.Size = new Size(94, 29);
+            btnEnableAudit.Size = new Size(82, 22);
             btnEnableAudit.TabIndex = 5;
             btnEnableAudit.Text = "Bật Audit";
             btnEnableAudit.UseVisualStyleBackColor = true;
@@ -138,9 +131,10 @@
             // 
             // btnDisableAudit
             // 
-            btnDisableAudit.Location = new Point(555, 12);
+            btnDisableAudit.Location = new Point(486, 9);
+            btnDisableAudit.Margin = new Padding(3, 2, 3, 2);
             btnDisableAudit.Name = "btnDisableAudit";
-            btnDisableAudit.Size = new Size(94, 29);
+            btnDisableAudit.Size = new Size(82, 22);
             btnDisableAudit.TabIndex = 6;
             btnDisableAudit.Text = "Tắt Audit";
             btnDisableAudit.UseVisualStyleBackColor = true;
@@ -148,9 +142,9 @@
             // 
             // AuditLogForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 450);
+            ClientSize = new Size(658, 338);
             Controls.Add(btnDisableAudit);
             Controls.Add(btnEnableAudit);
             Controls.Add(lbStatus);
@@ -158,6 +152,7 @@
             Controls.Add(listViewLogInform);
             Controls.Add(bSeen);
             Controls.Add(cbUser);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AuditLogForm";
             Text = "AuditLogForm";
             ResumeLayout(false);
@@ -174,8 +169,6 @@
         private ColumnHeader chOjectName;
         private ColumnHeader chTableName;
         private ColumnHeader chAct;
-        private ColumnHeader chImpactedColumn;
-        private ColumnHeader chTime;
         private ColumnHeader chContent;
         private Button btnEnableAudit;
         private Button btnDisableAudit;
